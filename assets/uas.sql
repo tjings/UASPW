@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 CREATE TABLE kursi (
   id_kursi VARCHAR(255) NOT NULL,
   id_ruangan INT NOT NULL,
-  PRIMARY KEY (id_kursi)
+  PRIMARY KEY (id_kursi, id_ruangan),
   FOREIGN KEY (id_ruangan) REFERENCES ruangan(id_ruangan)
 )
 ENGINE = InnoDB;
@@ -51,7 +51,7 @@ CREATE TABLE orders (
   no_kursi INT NOT NULL,
   total_pembayaran INT NOT NULL,
   PRIMARY KEY (id_order),
-  FOREIGN KEY (id_user) REFERENCES login(user_id),
+  FOREIGN KEY (id_user) REFERENCES login(id_user),
   FOREIGN KEY (id_movie) REFERENCES movies(id_movie),
   FOREIGN KEY (id_ruangan) REFERENCES ruangan(id_ruangan),
   FOREIGN KEY (id_kursi) REFERENCES kursi(id_kursi)
@@ -61,3 +61,16 @@ ENGINE = InnoDB;
 INSERT INTO login VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin'),
 (2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', 'user');
+
+INSERT INTO movies VALUES
+(1, 'Naruto Shippuden: The Last', 'Fantasy', 'Naruto adalah sebuah film.', 10, '2020-01-01', 2, 'assets/posters/naruto.jpg', 75000);
+
+INSERT INTO ruangan VALUES
+(1, 'Alpha');
+
+INSERT INTO kursi VALUES
+('A1', 1),
+('A2', 1),
+('A3', 1),
+('A4', 1),
+('A5', 1);
