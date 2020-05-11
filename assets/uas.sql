@@ -12,6 +12,13 @@ CREATE TABLE login (
 )
 ENGINE = InnoDB;
 
+CREATE TABLE ruangan (
+  id_ruangan INT NOT NULL AUTO_INCREMENT,
+  nama_ruangan VARCHAR(255),
+  PRIMARY KEY (id_ruangan)
+)
+ENGINE = InnoDB;
+
 CREATE TABLE movies (
   id_movie INT NOT NULL AUTO_INCREMENT,
   nama_movie VARCHAR(255) NOT NULL,
@@ -22,20 +29,16 @@ CREATE TABLE movies (
   waktu_film INT NOT NULL,
   poster_movie VARCHAR(255),
   harga_movie INT NOT NULL,
-  PRIMARY KEY (id_movie)
-)
-ENGINE = InnoDB;
-
-CREATE TABLE ruangan (
-  id_ruangan INT NOT NULL AUTO_INCREMENT,
-  nama_ruangan VARCHAR(255),
-  PRIMARY KEY (id_ruangan)
+  id_ruangan INT NOT NULL,
+  PRIMARY KEY (id_movie),
+  FOREIGN KEY (id_ruangan) REFERENCES ruangan(id_ruangan)
 )
 ENGINE = InnoDB;
 
 CREATE TABLE kursi (
   id_kursi VARCHAR(255) NOT NULL,
   id_ruangan INT NOT NULL,
+  is_booked BOOLEAN,
   PRIMARY KEY (id_kursi, id_ruangan),
   FOREIGN KEY (id_ruangan) REFERENCES ruangan(id_ruangan)
 )
@@ -48,7 +51,6 @@ CREATE TABLE orders (
   id_ruangan INT NOT NULL,
   id_kursi VARCHAR(255) NOT NULL,
   jumlah_tiket INT NOT NULL,
-  no_kursi INT NOT NULL,
   total_pembayaran INT NOT NULL,
   PRIMARY KEY (id_order),
   FOREIGN KEY (id_user) REFERENCES login(id_user),
@@ -62,15 +64,15 @@ INSERT INTO login VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin'),
 (2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', 'user');
 
-INSERT INTO movies VALUES
-(1, 'Naruto Shippuden: The Last', 'Fantasy', 'Naruto adalah sebuah film.', 10, '2020-01-01', 2, 'assets/posters/naruto.jpg', 75000);
-
 INSERT INTO ruangan VALUES
 (1, 'Alpha');
 
 INSERT INTO kursi VALUES
-('A1', 1),
-('A2', 1),
-('A3', 1),
-('A4', 1),
-('A5', 1);
+('A1', 1, FALSE),
+('A2', 1, FALSE),
+('A3', 1, FALSE),
+('A4', 1, FALSE),
+('A5', 1, FALSE);
+
+INSERT INTO movies VALUES
+(1, 'Naruto Shippuden: The Last', 'Fantasy', 'Naruto adalah sebuah film.', 10, '2020-01-01', 2, 'assets/posters/naruto.jpg', 75000, 1);

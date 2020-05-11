@@ -9,3 +9,10 @@
 #movie td {
   text-align: center;
 }
+
+.box {
+  display: inline-block;
+  margin: 10px;
+  background-color: green;
+  color: #fff;
+}
