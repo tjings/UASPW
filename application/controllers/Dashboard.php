@@ -5,19 +5,22 @@ class Dashboard extends CI_Controller {
 
     public function __construct()
     {
-        parent::__construct();
+      parent::__construct();
+      $this->load->model('Movie_model');
     }
 
     public function index()
     {
+      $data['movies'] = $this->Movie_model->get_movies();
+
       if($this->session->userdata('role') === 'admin') {
         $this->load->view('admin/dashboard');
       }
       else if($this->session->userdata('role') === 'user') {
-        $this->load->view('user/dashboard');
+        $this->load->view('user/dashboard', $data);
       }
       else {
-        $this->load->view('login');
+        redirect('login');
       }
     }
 
