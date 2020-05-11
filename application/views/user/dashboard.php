@@ -63,6 +63,7 @@
         <th>Minimal Usia</th>
         <th>Release Date</th>
         <th>Lama Film</th>
+        <th>Ruangan</th>
         <th>Aksi</th>
       </tr>
     </thead>
@@ -76,7 +77,8 @@
           $usia = $movie['minimal_usia'];
           $release = $movie['release_date'];
           $lama = $movie['waktu_film'];
-          $pathToOrder = site_url() . "/booking/showBooking/$id";
+          $ruangan = $movie['id_ruangan'];
+          $pathToOrder = site_url() . "/booking/showBooking?id=$id&ruangan=$ruangan";
 
           echo "<tr>";
             echo "<td>$counter</td>";
@@ -85,6 +87,7 @@
             echo "<td>$usia</td>";
             echo "<td>$release</td>";
             echo "<td>$lama jam</td>";
+            echo "<td>$ruangan</td>";
             echo "<td><a href=$pathToOrder>Pesan</a></td>";
           echo "</tr>";
 

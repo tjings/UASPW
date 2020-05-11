@@ -4,6 +4,7 @@
     <title>Book</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo base_url() . "assets/css/style.css" ?>">
   </head>
   <body>
     <div class="container">
@@ -20,6 +21,7 @@
         $release = $movie['release_date'];
         $lama = $movie['waktu_film'];
         $harga = $movie['harga_movie'];
+        $ruangan = $movie['id_ruangan'];
 
         echo "<p>ID: $id</p>";
         echo "<p>Nama: $nama</p>";
@@ -29,10 +31,31 @@
         echo "<p>Release Date: $release</p>";
         echo "<p>Lama Movie: $lama</p>";
         echo "<p>Harga: $harga</p>";
+        echo "<p>Ruangan: $ruangan</p>";
       ?>
 
       <h2>Pesan</h2>
       <a href="<?php echo site_url(); ?>">Kembali</a>
+
+      <div class="kotak" style="text-align: center; width: 100%">
+        <h3>Kursi</h3>
+        <div class="satu-renteng">
+          <?php
+            foreach($kursi as $i) {
+              $id_kursi = $i['id_kursi'];
+              echo "<div class='box'>$id_kursi</div>";
+            }
+          ?>
+        </div>
+      </div>
+
+      <form action="#" method="POST">
+        <input type="number" placeholder="Jumlah Tiket">
+        <input type="submit" value="Submit">
+      </form>
+
+      <!-- nanti hapus -->
+      <div class="spacer" style="padding-bottom:100px;"></div>
 
     </div>
   
