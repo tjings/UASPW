@@ -89,7 +89,7 @@
             <div class="account-wall">
                 <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                     alt="">    
-                <form class="form-signin" method="POST" action="<?php echo base_url() ?>index.php/login">
+                <form class="form-signin" method="POST" action="<?php echo site_url() . "/login/login" ?>">
                 <div class="form-group">
                     <input type="text" class="form-control" name="username" placeholder="Masukkan Username Anda" autofocus>
                     <?php echo form_error('username'); ?>

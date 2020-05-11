@@ -20,7 +20,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <div class="navbar-form navbar-right">
-                <a href="<?php echo base_url() ?>index.php/user/dashboard/logout" type="submit" class="btn btn-success"><i class="fa fa-sign-out"></i> Logout</a>
+                <a href="<?php echo base_url() ?>index.php/dashboard/logout" type="submit" class="btn btn-success"><i class="fa fa-sign-out"></i> Logout</a>
             </div>
       </div>
     </nav>
@@ -35,7 +35,7 @@
               <a href="#" class="list-group-item"><i class="fa fa-book"></i> Blog</a>
               <a href="#" class="list-group-item"><i class="fa fa-folder"></i> Kategori</a>
               <a href="#" class="list-group-item"><i class="fa fa-comments-o"></i> Komentar</a>
-              <a href="logout.php" class="list-group-item"><i class="fa fa-sign-out"></i> Logout</a>
+              <a href="<?php echo site_url() . "/dashboard/logout"?>"  class="list-group-item"><i class="fa fa-sign-out"></i> Logout</a>
             </div>
         </div>
         <div class="col-md-9">
