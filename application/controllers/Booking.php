@@ -7,6 +7,7 @@ class Booking extends CI_Controller {
   {
     parent::__construct();
     $this->load->model('Movie_model');
+    $this->load->model('Room_model');
   }
 
   public function index()
@@ -16,8 +17,10 @@ class Booking extends CI_Controller {
 
   public function showBooking()
   {
-    $url = $this->uri->segment(3);
+    $url = $this->input->get('id');
+    $ruangan = $this->input->get('ruangan');
     $data['movie'] = $this->Movie_model->get_movie($url);
+    $data['kursi'] = $this->Room_model->get_kursi($ruangan);
     $this->load->view('booking', $data);
   }
 
