@@ -19,4 +19,9 @@ class Movie_model extends CI_Model
     return $query->row_array();
   }
 
+  public function purchase_ticket($id_kursi, $id_user, $id_movie, $id_ruangan, $jumlah_tiket, $total_bayar) {
+    $this->db->query("UPDATE kursi SET is_booked = 1 WHERE id_kursi = '$id_kursi'");
+    $this->db->query("INSERT INTO orders VALUES('', '$id_user', '$id_movie', '$id_ruangan', '$id_kursi', '$jumlah_tiket', '$total_bayar')");
+  }
+
 }
