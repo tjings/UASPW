@@ -24,4 +24,10 @@ class Movie_model extends CI_Model
     $this->db->query("INSERT INTO orders VALUES('', '$id_user', '$id_movie', '$id_ruangan', '$id_kursi', '$jumlah_tiket', '$total_bayar')");
   }
 
+  public function buyTicket($data)
+  {
+    $this->db->set($data);
+    $this->db->replace('movies', $data);
+  }
+
 }

@@ -24,4 +24,24 @@ class Booking extends CI_Controller {
     $this->load->view('booking', $data);
   }
 
+  public function beliTiket()
+  {
+    $data = array(
+      'id_kursi' => $this->input->post('kursi', TRUE),
+      'id_ruangan' => $this->input->post('id_ruangan', TRUE),
+      'is_booked' => TRUE
+    );
+
+    $data2 = [
+      'id_order' => '',
+
+      'id_ruangan' => $this->input->post('id_ruangan', TRUE),
+      'id_kursi' => $this->input->post('kursi', TRUE),
+      'id_movie'
+    ];
+
+    $this->Movie_model->buyTicket($data);
+  
+  }
+
 }

@@ -16,3 +16,10 @@
   background-color: green;
   color: #fff;
 }
+
+.box-dipilih {
+  display: inline-block;
+  margin: 10px;
+  background-color: yellow;
+  color: #fff;
+}

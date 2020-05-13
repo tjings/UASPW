@@ -5,6 +5,10 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo base_url() . "assets/css/style.css" ?>">
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() . "assets/js/booking.js"; ?>"></script>
   </head>
   <body>
     <div class="container">
@@ -41,16 +45,21 @@
         <h3>Kursi</h3>
         <div class="satu-renteng">
           <?php
-            foreach($kursi as $i) {
+            $counter = 0;
+            foreach($kursi as $i) {              
               $id_kursi = $i['id_kursi'];
-              echo "<div class='box'>$id_kursi</div>";
+              echo "<div class='box box-bg'>$id_kursi</div>";
+              $counter++;
             }
-          ?>
+            ?>
         </div>
       </div>
 
       <form action="#" method="POST">
-        <input type="number" placeholder="Jumlah Tiket">
+        <input type="hidden" name="id_ruangan" value="<?php echo $this->input->get('ruangan'); ?>">
+        <input type="hidden" name="id_movie" value="<?php echo $this->input->get('id'); ?>">
+        <input type="text" placeholder="Kursi" name="kursi" />
+        <input type="number" placeholder="Jumlah Tiket" name="jmlTiket">
         <input type="submit" value="Submit">
       </form>
 
@@ -59,7 +68,6 @@
 
     </div>
   
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   </body>
 </html>
