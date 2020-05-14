@@ -7,6 +7,7 @@ CREATE TABLE login (
   username VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   nama_user VARCHAR(255) NOT NULL,
+  tanggal_lahir DATE NOT NULL,
   role ENUM('admin', 'user') NOT NULL,
   PRIMARY KEY (id_user)
 )
@@ -61,8 +62,8 @@ CREATE TABLE orders (
 ENGINE = InnoDB;
 
 INSERT INTO login VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 'admin'),
-(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', 'user');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2020-01-01', 'admin'),
+(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', '2019-01-01', 'user');
 
 INSERT INTO ruangan VALUES
 (1, 'Alpha');
