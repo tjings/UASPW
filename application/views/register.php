@@ -10,7 +10,7 @@
  <body>
      <h2>Registrasi Akun</h2>
  
-     <?php echo form_open('register');?>
+     <?php echo form_open('register/registrasi');?>
      <p>Nama:</p>
      <p>
      <input type="text" name="name" value="<?php echo set_value('name'); ?>"/>
@@ -34,7 +34,7 @@
      <input type="password" name="password_conf" value="<?php echo set_value('password_conf'); ?>"/>
      </p>
      <p> <?php echo form_error('password_conf'); ?> </p>
- 
+
      <p>
      <input type="submit" name="btnSubmit" value="Daftar" />
      </p>
