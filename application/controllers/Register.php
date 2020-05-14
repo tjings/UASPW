@@ -28,6 +28,7 @@
              $data['username'] =    $this->input->post('username');
              $data['password'] =    md5($this->input->post('password'));
              $data['nama_user']   =    $this->input->post('name');
+             $data['tanggal_lahir'] = $this->input->post('tanggal_lahir');
              $data['role'] = 'user';
  
              $this->Register_model->daftar($data);

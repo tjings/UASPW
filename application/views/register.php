@@ -16,6 +16,11 @@
      <input type="text" name="name" value="<?php echo set_value('name'); ?>"/>
      </p>
      <p> <?php echo form_error('name'); ?> </p>
+
+     <p>Tanggal Lahir:</p>
+     <p>
+     <input type="date" name="tanggal_lahir"/> 
+     </p>
  
      <p>Username:</p>
      <p>
