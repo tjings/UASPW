@@ -20,7 +20,8 @@
      <p>Tanggal Lahir:</p>
      <p>
      <input type="date" name="tanggal_lahir"/> 
-     </p>
+     </p> <?php echo form_error('tanggal_lahir'); ?> </p>
+
  
      <p>Username:</p>
      <p>
