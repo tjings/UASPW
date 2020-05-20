@@ -17,7 +17,7 @@
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="../assets/images/tiket.jpg" alt="sing up image"></figure>
+                        <figure><img src="<?= base_url() . "/assets/images/tiket.jpg"; ?>" alt="sing up image"></figure>
                         <a href="<?php echo site_url(). "/register"; ?>" class="signup-image-link">Create an account</a>
                     </div>
 
