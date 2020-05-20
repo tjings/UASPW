@@ -17,7 +17,7 @@
  
      public function registrasi() {
          $this->form_validation->set_rules('name', 'NAME','required');
-         $this->form_validation->set_rules('tanggal lahir','TANGGAL LAHIR','required');
+         $this->form_validation->set_rules('tanggal_lahir','TANGGAL LAHIR','required');
          $this->form_validation->set_rules('username', 'USERNAME','required');
          $this->form_validation->set_rules('password','PASSWORD','required');
          $this->form_validation->set_rules('password_conf','PASSWORD','required|matches[password]');
