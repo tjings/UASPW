@@ -19,8 +19,7 @@
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form method="POST" class="register-form" id="register-form">
-                        <?php echo form_open('register/registrasi');?>
+                        <form action="<?= site_url() . "/register/registrasi"; ?>" method="POST" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name" value="<?php echo set_value('name'); ?>"/>
@@ -49,7 +48,6 @@
                             <div class="form-group form-button">
                                 <input type="submit" name="btnSubmit" id="signup" class="form-submit" value="Register"/>
                             </div>
-                            <?php echo form_close();?>
                         </form>
                     </div>
                     <div class="signup-image">
