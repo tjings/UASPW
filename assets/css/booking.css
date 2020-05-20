@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+#movie th,
+#movie td {
+  text-align: center;
+}
+
+.box {
+  display: inline-block;
+  margin: 10px;
+  background-color: green;
+  color: #fff;
+}
+
+.box-dipilih {
+  display: inline-block;
+  margin: 10px;
+  background-color: yellow;
+  color: #fff;
+}
