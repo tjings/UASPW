@@ -31,8 +31,8 @@
               <a href="#" class="list-group-item active" style="text-align: center;background-color: black;border-color: black">
                 ADMINISTRATOR
               </a>
-              <a href="dashboard.php" class="list-group-item"><i class="fa fa-dashboard"></i> Dashboard</a>
-              <a href="#" class="list-group-item"><i class="fa fa-book"></i> Blog</a>
+              <a href="<?php echo site_url('booking/showBooking') ?>" class="list-group-item"><i class="fa fa-dashboard"></i> Dashboard</a>
+              <a href="<?php echo site_url('Booking/showBooking') ?>"  class="list-group-item"><i class="fa fa-book"></i> Blog</a>
               <a href="#" class="list-group-item"><i class="fa fa-folder"></i> Kategori</a>
               <a href="#" class="list-group-item"><i class="fa fa-comments-o"></i> Komentar</a>
               <a href="<?php echo base_url() . "/dashboard/logout" ?>" class="list-group-item"><i class="fa fa-sign-out"></i> Logout</a>
