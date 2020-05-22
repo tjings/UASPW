@@ -8,6 +8,11 @@ class Movie_model extends CI_Model
     return $query->result_array();
   }
 
+  public function ShowData() {
+		$query = $this->db->query("SELECT * FROM movies");
+		return $query->result_array();
+	}
+
   public function get_movie($id) {
     $this->db->select('*');
     $this->db->from('movies');

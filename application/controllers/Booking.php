@@ -44,4 +44,13 @@ class Booking extends CI_Controller {
   
   }
 
+  public function now(){
+    $Movie_model['data'] = $this->Movie_model->ShowData();
+		$this->load->view('user/now', $Movie_model);
+
+  }
+
+
+
+
 }
