@@ -10,5 +10,9 @@ class Room_model extends CI_Model
     $query = $this->db->get();
     return $query->result_array();
   }
+  public function ShowData() {
+		$query = $this->db->query("SELECT * FROM ruangan");
+		return $query->result_array();
+	}
 
 }

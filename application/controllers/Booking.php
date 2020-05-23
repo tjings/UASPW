@@ -50,7 +50,15 @@ class Booking extends CI_Controller {
 
   }
 
+  public function teater(){
+    $Room_model['data'] = $this->Room_model->ShowData();
+		$this->load->view('user/teater', $Room_model);
+  }
 
+  public function soon(){
+    $Movie_model['data'] = $this->Movie_model->ShowData();
+		$this->load->view('user/coming', $Movie_model);
 
+  }
 
 }

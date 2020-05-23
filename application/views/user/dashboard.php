@@ -21,10 +21,10 @@
                 <a class="nav-link" href="<?php echo site_url('booking/now') ?>"> Now Playing <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo site_url('booking/showBooking') ?>">Theaters <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?php echo site_url('booking/teater') ?>">Theaters <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="#">Coming Soon <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="<?php echo site_url('booking/soon') ?>">Coming Soon <span class="sr-only">(current)</span></a>
             </li>
         </ul>
     </div>
