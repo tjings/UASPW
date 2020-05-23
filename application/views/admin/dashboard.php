@@ -51,6 +51,19 @@
     </div>
 </div>
 
+<a href="<?php echo base_url("index.php/MoviePage/AddMovie")?>" style="float:right;margin-right: 15px;">
+		<button class="btn btn-primary"> 
+			<span class="glyphicon glyphicon-plus"></span>
+			Movie
+		</button>
+	</a>
+	<br/>
+	<br/>
+	<br/>
+	<?php echo $table; ?>
+
+	<?php echo $script; ?>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
