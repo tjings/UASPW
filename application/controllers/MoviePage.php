@@ -18,7 +18,7 @@ class MoviePage extends CI_Controller {
 
 		$data['table'] = $this->load->view('template/table_movie', $movies, TRUE);
 
-		$this->load->view('admin/movie',$data);
+		$this->load->view('admin/dashboard',$data);
 	}
 
 	public function ShowDetail()
