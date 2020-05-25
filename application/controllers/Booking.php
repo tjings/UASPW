@@ -24,24 +24,22 @@ class Booking extends CI_Controller {
     $this->load->view('booking', $data);
   }
 
-  public function beliTiket()
+  public function orderMovie()
   {
-    $data = array(
-      'id_kursi' => $this->input->post('kursi', TRUE),
-      'id_ruangan' => $this->input->post('id_ruangan', TRUE),
-      'is_booked' => TRUE
-    );
+    $harga_movie = $this->input->post('harga') * $this->input->post('jmlTiket');
 
-    $data2 = [
+    $data = [
       'id_order' => '',
-
-      'id_ruangan' => $this->input->post('id_ruangan', TRUE),
-      'id_kursi' => $this->input->post('kursi', TRUE),
-      'id_movie'
+      'id_user' => $this->session->userdata('user_id'),
+      'id_ruangan' => $this->input->post('id_ruangan'),
+      'id_movie' => $this->input->post('id_movie'),
+      'id_kursi' => $this->input->post('kursi'),
+      'jumlah_tiket' => $this->input->post('jmlTiket'),
+      'total_pembayaran' => $harga_movie
     ];
 
-    $this->Movie_model->buyTicket($data);
-  
+    $this->Movie_model->orderMovie($data, $data['id_kursi']);
+    redirect('dashboard');
   }
 
   public function now(){

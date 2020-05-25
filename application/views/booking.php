@@ -55,9 +55,10 @@
         </div>
       </div>
 
-      <form action="#" method="POST">
+      <form action="<?= site_url() . "/booking/orderMovie"; ?>" method="POST">
         <input type="hidden" name="id_ruangan" value="<?php echo $this->input->get('ruangan'); ?>">
         <input type="hidden" name="id_movie" value="<?php echo $this->input->get('id'); ?>">
+        <input type="hidden" name="harga" value="<?= $harga; ?>">
         <input type="text" placeholder="Kursi" name="kursi" />
         <input type="number" placeholder="Jumlah Tiket" name="jmlTiket">
         <input type="submit" value="Submit">
