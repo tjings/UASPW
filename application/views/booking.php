@@ -45,7 +45,7 @@
     <iframe width="560" height="315" src="<?= $trailer; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     <br><br>
-    <a href="<?php echo site_url(); ?>">Kembali</a><br>
+    <a href="<?php echo site_url('booking/now'); ?>">Kembali</a><br>
 
     <?php
     if ($umur < $movie['minimal_usia']) {
