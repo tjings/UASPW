@@ -15,11 +15,26 @@
   margin: 10px;
   background-color: green;
   color: #fff;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+
+.box p {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .box-dipilih {
   display: inline-block;
   margin: 10px;
   background-color: yellow;
+  color: #fff;
+}
+
+.box-sudah-dipesan {
+  display: inline-block;
+  margin: 10px;
+  background-color: red;
   color: #fff;
 }
