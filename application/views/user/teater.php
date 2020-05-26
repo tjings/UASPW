@@ -14,11 +14,11 @@
     </head>
     <body>
         <div class="container">
-            <h3 class='text-center'>Theathers</h3>
+            <h3 class='text-center'>Theaters</h3>
                 <table id="movie" class="table table-striped table-bordered" style="width:100%;">
                     <thead>
                         <tr>
-                            <th>Movie</th>
+                            <th>ID Ruangan</th>
                             <th>Ruangan</th>
                             <th>Genre</th>
                             <th>Minimal Usia</th>
