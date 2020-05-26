@@ -7,6 +7,10 @@
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
+DROP DATABASE IF EXISTS uas;
+CREATE DATABASE IF NOT EXISTS uas;
+USE uas;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -29,7 +33,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `kursi` (
-  `id_kursi` varchar(255) NOT NULL,
+  `id_kursi` varchar(11) NOT NULL,
   `id_ruangan` int(11) NOT NULL,
   `is_booked` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -43,7 +47,27 @@ INSERT INTO `kursi` (`id_kursi`, `id_ruangan`, `is_booked`) VALUES
 ('A2', 1, 0),
 ('A3', 1, 0),
 ('A4', 1, 0),
-('A5', 1, 0);
+('A5', 1, 0),
+('B1', 1, 0),
+('B2', 1, 0),
+('B3', 1, 0),
+('B4', 1, 0),
+('B5', 1, 0),
+('C1', 1, 0),
+('C2', 1, 0),
+('C3', 1, 0),
+('C4', 1, 0),
+('C5', 1, 0),
+('D1', 1, 0),
+('D2', 1, 0),
+('D3', 1, 0),
+('D4', 1, 0),
+('D5', 1, 0),
+('E1', 1, 0),
+('E2', 1, 0),
+('E3', 1, 0),
+('E4', 1, 0),
+('E5', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -65,8 +89,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id_user`, `username`, `password`, `nama_user`, `tanggal_lahir`, `role`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2020-01-01', 'admin'),
-(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', '2019-01-01', 'user');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2000-01-01', 'admin'),
+(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', '2000-01-01', 'user');
 
 -- --------------------------------------------------------
 
@@ -84,6 +108,7 @@ CREATE TABLE `movies` (
   `waktu_film` time NOT NULL,
   `poster_movie` varchar(255) DEFAULT NULL,
   `harga_movie` int(11) NOT NULL,
+  `trailer` varchar(255),
   `id_ruangan` int(11) NOT NULL,
   `is_released` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -91,9 +116,10 @@ CREATE TABLE `movies` (
 --
 -- Dumping data for table `movies`
 --
+INSERT INTO `movies` VALUES
+(1, 'Naruto Shippuden: The Last', 'Fantasy', 'Naruto adalah sebuah film.', '10', '2020-01-01', '02:00:02', 'assets/posters/naruto.jpg', 75000, 'https://www.youtube.com/embed/tA3yE4_t6SY', 1, 1);
 
 INSERT INTO `movies` (`id_movie`, `nama_movie`, `genre_movie`, `sinopsis`, `minimal_usia`, `release_date`, `waktu_film`, `poster_movie`, `harga_movie`, `id_ruangan`, `is_released`) VALUES
-(1, 'Naruto Shippuden: The Last', 'Fantasy', 'Naruto adalah sebuah film.', '10', '2020-01-01', '02:00:02', 'assets/posters/naruto.jpg', 75000, 1, 1),
 (2, 'Scoob!', 'Animation, Adventure, Comedy', 'Scooby and the gang face their most challenging mystery ever: a plot to unleash the ghost dog Cerberus upon the world. As they race to stop this dogpocalypse, the gang discovers that Scooby has an epic destiny greater than anyone imagined.', 'PG', '2020-05-15', '01:34:00', 'assets/posters/scoob.jpg', 45000, 1, 1),
 (3, 'Extraction', 'Action, Thriller ', 'Tyler Rake, a fearless black market mercenary, embarks on the most deadly extraction of his career when he\'s enlisted to rescue the kidnapped son of an imprisoned international crime lord.', 'R', '2020-04-24', '01:56:00', 'assets/posters/extraction.jpg\r\n', 45000, 1, 1),
 (4, 'Mulan', 'Action, Adventure, Drama', 'A young Chinese maiden disguises herself as a male warrior in order to save her father. A live-action feature film based on Disney\'s \'Mulan.\'', 'PG-13', '2020-07-24', '01:55:00', 'assets/posters/mulan2020.jpg', 45000, 1, 0),
@@ -139,7 +165,7 @@ CREATE TABLE `orders` (
   `id_user` int(11) NOT NULL,
   `id_movie` int(11) NOT NULL,
   `id_ruangan` int(11) NOT NULL,
-  `id_kursi` varchar(255) NOT NULL,
+  `id_kursi` varchar(11) NOT NULL,
   `jumlah_tiket` int(11) NOT NULL,
   `total_pembayaran` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -152,17 +178,19 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `ruangan` (
   `id_ruangan` int(11) NOT NULL,
-  `nama_ruangan` varchar(255) DEFAULT NULL
+  `nama_ruangan` varchar(255) DEFAULT NULL,
+  `lebar_ruangan` int(11) NOT NULL,
+  `panjang_ruangan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ruangan`
 --
 
-INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`) VALUES
-(1, 'Alpha'),
-(2, 'Beta'),
-(3, 'Gamma');
+INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`, `lebar_ruangan`, `panjang_ruangan`) VALUES
+(1, 'Alpha', 5, 5),
+(2, 'Beta', 5, 5),
+(3, 'Gamma', 4, 2);
 
 --
 -- Indexes for dumped tables
