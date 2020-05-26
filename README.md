@@ -1,6 +1,9 @@
 # UAS Pemweb
 Bioskop
 
+## Catatan
+Setiap kali ada update database, jangan lupa untuk import ulang.
+
 ## Cara Install
 * `git clone repo_url`, lalu copy ke folder `htdocs` dalam XAMPP.
 * Pastikan nama foldernya UASPW, jadi `htdocs/UASPW`. Ekstrak foldernya dan pastikan yang ada cuma isi project CI nya aja yang ada di dalam folder (application, assets, system, dll).
