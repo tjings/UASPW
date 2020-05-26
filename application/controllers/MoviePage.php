@@ -71,9 +71,9 @@ class MoviePage extends CI_Controller {
 	
  
 		if($this->form_validation->run() != false){
-			$config['upload_path'] = "./assets/posters/";
-			$config['allowed_types'] = "gif|jpg|png";pp
-			$config['max_size'] = "100000";
+			// $config['upload_path'] = "./assets/posters/";
+			// $config['allowed_types'] = "gif|jpg|png";pp
+			// $config['max_size'] = "100000";
 			$this->load->library('upload',$config);
 			
 			$stat = $this->upload->do_upload('poster');

@@ -47,7 +47,7 @@
                 'release_date' => $release_date,
                 'waktu_film' => $waktu_film,
                 'poster' => $poster_movie,
-                'harga_movie' => $harga_movie;
+                'harga_movie' => $harga_movie
 			);
 			
 			$this->db->trans_begin();
@@ -77,7 +77,7 @@
                 'release_date' => $release_date,
                 'waktu_film' => $waktu_film,
                 'poster' => $poster_movie,
-                'harga_movie' => $harga_movie;
+                'harga_movie' => $harga_movie
 			);
 			
 			$this->db->trans_begin();

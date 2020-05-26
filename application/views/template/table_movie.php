@@ -7,7 +7,9 @@
         <th>Minimal Usia</th>
         <th>Release Date</th>
         <th>Lama Film</th>
-        <th>Ruangan</th>
+		<th>Ruangan</th>
+		<th>Poster</th>
+		<th>Harga</th>
         <th>Aksi</th>
 		</tr>
 	</thead>
@@ -23,10 +25,10 @@
 					echo "<td>" .$row['id_movie'] ."</td>";
 					echo "<td>" .$row['nama_movie'] ."</td>";
 					echo "<td>" .$row['genre_movie'] ."</td>";
-                    echo "<td>" .$row['sinopsis'] ."</td>";
                     echo "<td>" .$row['minimal_usia'] ."</td>";
                     echo "<td>" .$row['release_date'] ."</td>";
-                    echo "<td>" .$row['waktu_film'] ."</td>";
+                    echo "<td>" .$row['waktu_film'] . ' jam'."</td>";
+                    echo "<td>" .$row['id_ruangan'] ."</td>";
                     echo "<td>" .$row['poster_movie'] ."</td>";
                     echo "<td>" .$row['harga_movie'] ."</td>";
 					echo "<td>";
