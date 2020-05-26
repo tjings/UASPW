@@ -63,5 +63,56 @@ class Booking extends CI_Controller {
 
   }
 
+  public function EditUser($id_user)
+	{
+    $data['script'] = $this->load->view('include/script',NULL,TRUE);
+	
+		$data['user_id'] = $this->User_model->getMyData($user_id);
+
+		$this->load->view('user/user_edit');
+	}
+
+	public function Edit(){
+
+		$config['upload_path'] = "./assets/posters/";
+		$config['allowed_types'] = "gif|jpg|png";
+		$config['max_size'] = "100000";
+		$this->load->library('upload',$config);
+		
+		$stat = $this->upload->do_upload('posternew');
+		$pict = '/assets/posters/'.$_FILES['posternew']['name'];
+
+		if($poster_movie == '/assets/posters/'){
+			echo $stat;
+      $user_id = $this->input->post('id_user');
+			
+			$username = $this->input->post('username');
+      $password = $this->input->post('password');
+      $nama_user = $this->input->post('nama_user');
+			$tanggal_lahir = $this->input->post('tanggal_lahir');
+			$role = $this->input->post('role');
+			$pict = $this->input->post('pict');
+
+			$this-> User_model -> UpdateData($user_id,$username,$password,$nama_user,$tanggal_lahir,$role, $this->input->post('pict'));
+			redirect('Booking','refresh');
+
+		}else{
+
+			echo $pict;
+      $user_id = $this->input->post('id_user');
+			
+			$username = $this->input->post('username');
+      $password = $this->input->post('password');
+      $nama_user = $this->input->post('nama_user');
+			$tanggal_lahir = $this->input->post('tanggal_lahir');
+			$role = $this->input->post('role');
+			$pict = $this->input->post('pict');
+
+      $this-> User_model -> UpdateData($user_id,$username,$password,$nama_user,$tanggal_lahir,$role, $pict);
+			redirect('Booking','refresh');
+
+		}
+	}
+
 
 }
