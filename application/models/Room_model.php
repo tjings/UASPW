@@ -10,9 +10,13 @@ class Room_model extends CI_Model
     $query = $this->db->get();
     return $query->result_array();
   }
-  public function ShowData() {
-		$query = $this->db->query("SELECT * FROM ruangan");
-		return $query->result_array();
+
+  public function getSatuRuangan($ruangan) {
+    $this->db->select('*');
+    $this->db->from('ruangan');
+    $this->db->where('id_ruangan', $ruangan);
+    $query = $this->db->get()->row_array();
+		return $query;
 	}
 
 }
