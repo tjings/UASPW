@@ -9,33 +9,21 @@ class MoviePage extends CI_Controller {
 		$this->load->model('movies');
 	}
 
-	public function index()
-	{
-	
+	public function index(){
 		$movies['data'] = $this->movies->ShowData();
-
-		$data['script'] = $this->load->view('include/script',NULL,TRUE);
-
-		$data['table'] = $this->load->view('template/table_movie', $movies, TRUE);
-
-		$this->load->view('admin/dashboard',$data);
+		$data['script'] = $this->load->view('include/script.php',NULL,TRUE);
+		$data['table'] = $this->load->view('template/table.php',$movies, TRUE);
+		$this->load->view('admin/dashboard.php',$data);
 	}
 
-	public function ShowDetail()
-	{
-
+	public function ShowDetail(){
 		$data['script'] = $this->load->view('include/script',NULL,TRUE);
-
 		$data['detail'] = $this->movies->ShowDetail($_GET['id_movie']);
-
 		$this->load->view('admin/movie_details',$data);
 	}
 
-	public function AddMovie()
-	{
-		
+	public function AddMovie(){
 		$data['script'] = $this->load->view('include/script',NULL,TRUE);
-
 		$this->load->view('admin/movie_add',$data);
 	}
 
