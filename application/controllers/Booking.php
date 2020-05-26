@@ -8,6 +8,7 @@ class Booking extends CI_Controller {
     parent::__construct();
     $this->load->model('Movie_model');
     $this->load->model('Room_model');
+    $this->load->model('User_model');
   }
 
   public function index()
@@ -21,6 +22,9 @@ class Booking extends CI_Controller {
     $ruangan = $this->input->get('ruangan');
     $data['movie'] = $this->Movie_model->get_movie($url);
     $data['kursi'] = $this->Room_model->get_kursi($ruangan);
+    $data['ruang'] = $this->Room_model->getSatuRuangan($ruangan);
+    $data['user'] = $this->User_model->getMyData($this->session->userdata('user_id'));
+    $data['umur'] = $this->User_model->hitungUmur($this->session->userdata('user_id'));
     $this->load->view('booking', $data);
   }
 
@@ -34,7 +38,7 @@ class Booking extends CI_Controller {
       'id_ruangan' => $this->input->post('id_ruangan'),
       'id_movie' => $this->input->post('id_movie'),
       'id_kursi' => $this->input->post('kursi'),
-      'jumlah_tiket' => $this->input->post('jmlTiket'),
+      'jumlah_tiket' => 1,
       'total_pembayaran' => $harga_movie
     ];
 
