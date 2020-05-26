@@ -13,6 +13,16 @@ class Movie_model extends CI_Model
 		return $query->result_array();
 	}
 
+	public function ShowSoon() {
+		$query = $this->db->query("SELECT * FROM movies WHERE is_released=0");
+		return $query->result_array();
+	}
+
+	public function ShowNow() {
+		$query = $this->db->query("SELECT * FROM movies WHERE is_released=1");
+		return $query->result_array();
+	}
+
   public function get_movie($id) {
     $this->db->select('*');
     $this->db->from('movies');

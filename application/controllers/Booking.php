@@ -47,7 +47,7 @@ class Booking extends CI_Controller {
   }
 
   public function now(){
-    $Movie_model['data'] = $this->Movie_model->ShowData();
+    $Movie_model['data'] = $this->Movie_model->ShowNow();
 		$this->load->view('user/now', $Movie_model);
 
   }
@@ -58,7 +58,7 @@ class Booking extends CI_Controller {
   }
 
   public function soon(){
-    $Movie_model['data'] = $this->Movie_model->ShowData();
+    $Movie_model['data'] = $this->Movie_model->ShowSoon();
 		$this->load->view('user/coming', $Movie_model);
 
   }
