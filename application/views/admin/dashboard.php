@@ -60,6 +60,7 @@
 	<br/>
 	<br/>
 	<br/>
+  <?php echo $table; ?>
 	
 	<?php echo $script; ?>
 
