@@ -23,7 +23,8 @@ class Booking extends CI_Controller {
     $ruangan = $this->input->get('ruangan');
     $data['movie'] = $this->Movie_model->get_movie($url);
     $data['kursi'] = $this->Room_model->get_kursi($ruangan);
-    $data['ruang'] = $this->Room_model->getSatuRuangan($ruangan);
+		$data['ruang'] = $this->Room_model->getSatuRuangan($ruangan);
+		$data['menit'] = $this->Movie_model->hoursToMinutes($data['movie']['waktu_film']);
     $data['user'] = $this->User_model->getMyData($this->session->userdata('user_id'));
     $data['umur'] = $this->User_model->hitungUmur($this->session->userdata('user_id'));
     $this->load->view('booking', $data);
@@ -49,6 +50,7 @@ class Booking extends CI_Controller {
 
   public function now(){
     $Movie_model['data'] = $this->Movie_model->ShowNow();
+    $Movie_model['movie'] = $this->Movie_model->ShowData();
 		$this->load->view('user/now', $Movie_model);
 
   }

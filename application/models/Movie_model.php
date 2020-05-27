@@ -37,7 +37,17 @@ class Movie_model extends CI_Model
   public function orderMovie($data, $id_kursi) {
     $this->db->query("UPDATE kursi SET is_booked = 1 WHERE id_kursi = '$id_kursi'");
     $this->db->insert('orders', $data);
-  }
+	}
+	
+	public function hoursToMinutes($hours) { 
+    $minutes = 0; 
+    if (strpos($hours, ':') !== false) 
+    { 
+        // Split hours and minutes. 
+        list($hours, $minutes) = explode(':', $hours); 
+    } 
+    return $hours * 60 + $minutes; 
+} 
 
   public function buyTicket($data)
   {
