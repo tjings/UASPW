@@ -12,7 +12,31 @@
   <script type="text/javascript" src="<?php echo base_url() . "assets/js/booking.js"; ?>"></script>
 </head>
 <body>
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #005350;" >
+    <button class="navbar-toggler"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <img src="https://pngimage.net/wp-content/uploads/2018/06/white-menu-icon-png-8.png" width="40" height="35" class="d-inline-block-align-top" alt="Image Logo"/>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a style="color: #FFFFFF" class="navbar-brand" href="<?php echo site_url('dashboard')?>">Home</a>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/now') ?>"> Now Playing</a>
+            </li>
+            <li class="nav-item">
+                <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/teater') ?>">Theaters</a>
+            </li>
+            <li class="nav-item">
+                <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/soon') ?>">Coming Soon</a>
+            </li>
+        </ul>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <div class="navbar-form navbar-right">
+            <a href="<?php echo base_url() ?>index.php/dashboard/logout" type="submit" class="btn btn-light"><i class="fa fa-sign-out"></i> Logout</a>
+        </div>
+    </div>
+</nav>  
+<div class="container" style="padding-top: 100px;">
   <?php
     $id = $movie['id_movie'];
     $nama = $movie['nama_movie'];
@@ -44,7 +68,7 @@
         <div class="col-md-3 col-sm-6 col-xs-6">
           <?php echo "<img src='$poster' style='margin-right:10px; margin-bottom:10px; width: 99%;'>"; ?>
         </div>
-        <div class="col-md-9 col-sm-6 col-xs-6">
+        <div class="col-md-3 col-sm-6 col-xs-6">
           <div class="row" style="max-width: 200px; margin-left:20px;">
           <p><span class="glyphicon glyphicon-time"></span><?php echo " $lama - Minutes" ?></p>
           <p><i class="fa fa-coins"></i><?php echo "Rp $harga"?></p>
@@ -53,6 +77,9 @@
           <p><button class="btn icon-btn" style="width: 90%; background-color: #00807b; color: white;">BUY TICKET</button></p>
           <p><button class="btn icon-btn" style="width: 90%; background-color: #00807b; color: white;">TRAILER</button></p>
           </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+        <iframe width="560" height="315" src="<?= $trailer; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>	
       </div>
       <div>
@@ -61,7 +88,7 @@
       <p style="margin-bottom:5px;"><strong>Release Date :</strong></p><p><?php echo date("d M Y", strtotime($release))?></p>
 
     </div>
-    <iframe width="560" height="315" src="<?= $trailer; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
 
     <br><br>
     <a href="<?php echo site_url('booking/now'); ?>">Kembali</a><br>
@@ -119,8 +146,6 @@
     <div class="spacer" style="padding-bottom:100px;"></div>
 
   </div>
-
-
 </body>
 
 </html>

@@ -42,7 +42,6 @@ class Booking extends CI_Controller {
       'jumlah_tiket' => 1,
       'total_pembayaran' => $harga_movie
     ];
-
     $this->Movie_model->orderMovie($data, $data['id_kursi']);
     redirect('dashboard');
   }
