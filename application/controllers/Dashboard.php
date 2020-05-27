@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller {
     {
       parent::__construct();
       $this->load->model('Movie_model');
+      $this->load->model('User_model');
     }
 
     public function index()

@@ -131,16 +131,17 @@ CREATE TABLE `login` (
   `password` varchar(255) NOT NULL,
   `nama_user` varchar(255) NOT NULL,
   `tanggal_lahir` date NOT NULL,
-  `role` enum('admin','user') NOT NULL
+  `role` enum('admin','user') NOT NULL,
+  `pict` varchar(255) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`id_user`, `username`, `password`, `nama_user`, `tanggal_lahir`, `role`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2000-01-01', 'admin'),
-(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', '2000-01-01', 'user');
+INSERT INTO `login` (`id_user`, `username`, `password`, `nama_user`, `tanggal_lahir`, `role`, `pict`) VALUES
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', '2000-01-01', 'admin', NULL),
+(2, 'user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', '2000-01-01', 'user',NULL);
 
 -- --------------------------------------------------------
 
