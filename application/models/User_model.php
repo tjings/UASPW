@@ -71,6 +71,7 @@ class User_model extends CI_Model
 			{
 				//Type your code here ...
 			}
+			
 		}
 
 }
