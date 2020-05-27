@@ -22,7 +22,7 @@
 		{
 			$this->db->trans_begin();
 
-			$query = $this->db->query("SELECT * FROM movies where id_movies = $id");
+			$query = $this->db->query("SELECT * FROM movies where id_movie = $id");
 			return $query->result_array();
 
 			$this->db->trans_complete();
