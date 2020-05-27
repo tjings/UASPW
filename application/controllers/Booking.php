@@ -64,13 +64,14 @@ class Booking extends CI_Controller {
 
   }
 
-  public function EditUser($id_user)
+  public function EditUser()
+
 	{
     $data['script'] = $this->load->view('include/script',NULL,TRUE);
-	
-		$data['user_id'] = $this->User_model->getMyData($user_id);
+    $data['param'] = $this->User_model->get_user();
+		
 
-		$this->load->view('user/user_edit');
+		$this->load->view('user/user_edit',$data);
 	}
 
 	public function Edit(){

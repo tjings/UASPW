@@ -3,6 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_model extends CI_Model
 {
+  
+    public function get_user() {
+      $query = $this->db->get('login');
+      return $query->result_array();
+    }
   public function getMyData($user_id)
   {
     $this->db->select('*');
@@ -10,6 +15,25 @@ class User_model extends CI_Model
     $this->db->where('id_user', $user_id);
     return $this->db->get()->row_array();
   }
+
+  public function ShowDetail($user_id)
+		{
+			$this->db->trans_begin();
+
+			$query = $this->db->query("SELECT * FROM login where id_user = $user_id");
+			return $query->result_array();
+
+			$this->db->trans_complete();
+
+			if($this->db->trans_status() === FALSE)
+			{
+				$this->db->trans_rollback();
+				return FALSE;
+			}else
+			{
+				//Type your code here ...
+			}
+		}
 
   public function hitungUmur($user_id)
   {
