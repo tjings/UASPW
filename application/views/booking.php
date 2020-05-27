@@ -24,8 +24,8 @@
     $genre = $movie['genre_movie'];
     $sinopsis = $movie['sinopsis'];
     $usia = $movie['minimal_usia'];
-    $release = $movie['release_date'];
-    $lama = $movie['waktu_film'];
+    $release = date("d M Y", strtotime($movie['release_date']));
+    $lama = $menit;
     $harga = $movie['harga_movie'];
     $ruangan = $movie['id_ruangan'];
     $trailer = $movie['trailer'];
@@ -35,9 +35,9 @@
     echo "<p>Genre: $genre</p>";
     echo "<p>Sinopsis: $sinopsis</p>";
     echo "<p>Usia: $usia</p>";
-    echo "<p>Release Date: $release</p>";
-    echo "<p>Lama Movie: $lama</p>";
-    echo "<p>Harga: $harga</p>";
+    echo "<p>Release Date: " . $release . "</p>";
+    echo "<p>Lama Movie: $lama Menit </p>";
+    echo "<p>Harga: Rp ". $harga."</p>";
     echo "<p>Ruangan: $ruangan</p>";
     ?>
 
