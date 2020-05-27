@@ -39,6 +39,36 @@
     <div class="panel-body">
         Selamat Datang <b><?php echo $this->session->userdata("user_nama") ?></b> di halaman User System
     </div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="<?= base_url() . "/assets/posters/bbfl.jpg"; ?>" class="d-block w-100" alt="dashboard1">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() . "/assets/posters/boy1.jpg"; ?>" class="d-block w-100" alt="dashboard2">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() . "/assets/posters/boy2.jpg"; ?>" class="d-block w-100" alt="dashboard3">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() . "/assets/posters/fantasyisland.jpg"; ?>" class="d-block w-100" alt="dashboard4">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() . "/assets/posters/charlies.jpg"; ?>" class="d-block w-100" alt="dashboard5">
+            </div>
+            <div class="carousel-item">
+                <img src="<?= base_url() . "/assets/posters/endgame.jpg"; ?>" class="d-block w-100" alt="dashboard6">
+            </div>
+        </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+    </div>
 </div>
 </body>
 </html>

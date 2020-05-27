@@ -11,16 +11,12 @@
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url() . "assets/js/booking.js"; ?>"></script>
 </head>
-
 <body>
   <div class="container">
-    <h1>Movie Poster</h1>
-    <img src="<?php echo base_url() . $movie['poster_movie']; ?>">
-
-    <h2>Data Movie</h2>
-    <?php
+  <?php
     $id = $movie['id_movie'];
     $nama = $movie['nama_movie'];
+    $poster = base_url() . $movie['poster_movie'];
     $genre = $movie['genre_movie'];
     $sinopsis = $movie['sinopsis'];
     $usia = $movie['minimal_usia'];
@@ -29,19 +25,42 @@
     $harga = $movie['harga_movie'];
     $ruangan = $movie['id_ruangan'];
     $trailer = $movie['trailer'];
+  ?>
 
-    echo "<p>ID: $id</p>";
-    echo "<p>Nama: $nama</p>";
-    echo "<p>Genre: $genre</p>";
-    echo "<p>Sinopsis: $sinopsis</p>";
-    echo "<p>Usia: $usia</p>";
-    echo "<p>Release Date: " . $release . "</p>";
-    echo "<p>Lama Movie: $lama Menit </p>";
-    echo "<p>Harga: Rp ". $harga."</p>";
-    echo "<p>Ruangan: $ruangan</p>";
-    ?>
+    <div class="panel-heading">
+      <div class="row" style="margin: 0px; padding: 0px;">
+        <div class="col-xs-8 col-sm-11 col-md-11" style="font-weight: bold">
+          <?php echo "<h1>$nama</h1>"; ?>
+        </div> 
+        <div class="col-xs-8 col-sm-11 col-md-11">
+          <?php echo "<p>$genre</p>";?>
+        </div> 
+      </div>
+      <hr>
+    </div>
 
-    <h2>Trailer</h2>
+    <div style="margin-bottom: 0px; min-height: 200px; padding: 10px;">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <?php echo "<img src='$poster' style='margin-right:10px; margin-bottom:10px; width: 99%;'>"; ?>
+        </div>
+        <div class="col-md-9 col-sm-6 col-xs-6">
+          <div class="row" style="max-width: 200px; margin-left:20px;">
+          <p><span class="glyphicon glyphicon-time"></span><?php echo " $lama - Minutes" ?></p>
+          <p><i class="fa fa-coins"></i><?php echo "Rp $harga"?></p>
+          <p><a class="btn btn-default btn-outline disabled" style="color: #005350; font-weight: bold;"><?php echo $usia ?></a></p>
+          <p><button class="btn icon-btn" style="width: 90%; background-color: #00807b; color: white;">PLAYING AT</button></p>
+          <p><button class="btn icon-btn" style="width: 90%; background-color: #00807b; color: white;">BUY TICKET</button></p>
+          <p><button class="btn icon-btn" style="width: 90%; background-color: #00807b; color: white;">TRAILER</button></p>
+          </div>
+        </div>	
+      </div>
+      <div>
+        <?php echo "<p>$sinopsis</p>";?>
+      </div><br>
+      <p style="margin-bottom:5px;"><strong>Release Date :</strong></p><p><?php echo date("d M Y", strtotime($release))?></p>
+
+    </div>
     <iframe width="560" height="315" src="<?= $trailer; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     <br><br>
