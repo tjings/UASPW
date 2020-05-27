@@ -10,33 +10,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/dashboard.css"; ?>">
     </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #005350;" >
-    <a style="color: #FFFFFF" class="navbar-brand" href="<?php echo site_url('dashboard')?>">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a style="color: #FFFFFF" class="nav-link" href="<?php echo site_url('booking/now') ?>"> Now Playing <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a style="color: #FFFFFF" class="nav-link" href="<?php echo site_url('booking/teater') ?>">Theaters <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a style="color: #FFFFFF" class="nav-link" href="<?php echo site_url('booking/soon') ?>">Coming Soon <span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-        <div class="navbar-form navbar-right">
-            <a href="<?php echo base_url() ?>index.php/dashboard/logout" type="submit" class="btn btn-light"><i class="fa fa-sign-out"></i> Logout</a>
-        </div>
-    </div>
-</nav>
     <div class="container" style="padding-top: 100px;">
 
-        <div class="row">
+        <div class="row"  style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
             <?php foreach ((array) $data as $i) : 
                 $id = $i['id_movie'];
                 $name = $i['nama_movie'];
@@ -49,7 +25,7 @@
                 $pathToOrder = site_url() . "/booking/showBooking?id=$id&ruangan=$ruangan";
                 ?>
             <div class="col-md-4">
-                <div class="card mb-3">
+                <div class="card mb-3"style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
                     <a href="<?=$pathToOrder?>">
                         <img style="height: 500px;"src="<?= $movie ?>" class="card-img-top">
                     </a>
