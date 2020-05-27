@@ -16,11 +16,9 @@
 			</div>
 	</div>
 	<div class="container" style="margin-top: 35px;">
-		<?php 
-			if(isset($id_user)){ 
-				foreach($id_user as $row){
-		?>
-		<form method='POST' action='<?php echo base_url('index.php/Booking/Edit'); ?>' enctype='multipart/form-data'>
+	<?php foreach($login as $u){ ?>
+		
+		<form method='POST' action='<?php echo base_url('booking/update'); ?>' enctype='multipart/form-data'>
 			<div class='form-group row'>
                 <label class='col-sm-3' for='id_movie'>ID User:</label>
 				<input class='form-control' type='hidden' name='movieid' value='<?php echo $row['id_user']; ?>'>
@@ -71,5 +69,6 @@
 	</div>
 	<br/>
 	<br/>
+	<?php } ?>
 </body>
 </html>
