@@ -12,7 +12,6 @@ class Dashboard extends CI_Controller {
     public function index()
     {
       $data['movies'] = $this->Movie_model->get_movies();
-      $data['login'] = $this->user_model->get_user();
 
       if($this->session->userdata('role') === 'admin') {
 				redirect('moviePage');
