@@ -10,21 +10,21 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/dashboard.css"; ?>">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #005350;" >
-    <button class="navbar-toggler"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <img src="https://pngimage.net/wp-content/uploads/2018/06/white-menu-icon-png-8.png" width="40" height="35" class="d-inline-block-align-top" alt="Image Logo"/>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="<?php echo site_url('booking/edit') ?>">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <a style="color: #FFFFFF" class="navbar-brand" href="<?php echo site_url('dashboard')?>">Home</a>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/now') ?>"> Now Playing</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="<?php echo site_url('booking/now') ?>"> Now Playing <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/teater') ?>">Theaters</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="<?php echo site_url('booking/teater') ?>">Theaters <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/soon') ?>">Coming Soon</a>
+            <li class="nav-item active">
+                <a class="nav-link" href="<?php echo site_url('booking/soon') ?>">Coming Soon <span class="sr-only">(current)</span></a>
             </li>
         </ul>
     </div>
@@ -34,41 +34,11 @@
         </div>
     </div>
 </nav>
+
 <div class="container" style="margin-top: 80px">
     <div class="panel-body">
         Selamat Datang <b><?php echo $this->session->userdata("user_nama") ?></b> di halaman User System
     </div>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="<?= base_url() . "/assets/posters/bbfl.jpg"; ?>" class="d-block w-100" alt="dashboard1">
-            </div>
-            <div class="carousel-item">
-                <img src="<?= base_url() . "/assets/posters/boy1.jpg"; ?>" class="d-block w-100" alt="dashboard2">
-            </div>
-            <div class="carousel-item">
-                <img src="<?= base_url() . "/assets/posters/boy2.jpg"; ?>" class="d-block w-100" alt="dashboard3">
-            </div>
-            <div class="carousel-item">
-                <img src="<?= base_url() . "/assets/posters/fantasyisland.jpg"; ?>" class="d-block w-100" alt="dashboard4">
-            </div>
-            <div class="carousel-item">
-                <img src="<?= base_url() . "/assets/posters/charlies.jpg"; ?>" class="d-block w-100" alt="dashboard5">
-            </div>
-            <div class="carousel-item">
-                <img src="<?= base_url() . "/assets/posters/endgame.jpg"; ?>" class="d-block w-100" alt="dashboard6">
-            </div>
-        </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-    </div>
 </div>
-<?php echo $footer; ?>
 </body>
 </html>
