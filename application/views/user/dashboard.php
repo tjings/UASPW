@@ -26,6 +26,9 @@
             <li class="nav-item">
                 <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/soon') ?>">Coming Soon</a>
             </li>
+            <li class="nav-item">
+                <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/EditUser') ?>">User</a>
+            </li>
         </ul>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
@@ -69,6 +72,6 @@
             </a>
     </div>
 </div>
-<?php echo $footer; ?>
+
 </body>
 </html>

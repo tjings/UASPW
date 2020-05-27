@@ -16,9 +16,9 @@
 			</div>
 	</div>
 	<div class="container" style="margin-top: 35px;">
-		<?php 
-			if(isset($id_user)){ 
-				foreach($id_user as $row){
+	<?php 
+			if(isset($param)){ 
+				foreach($param as $row){
 		?>
 		<form method='POST' action='<?php echo base_url('index.php/Booking/Edit'); ?>' enctype='multipart/form-data'>
 			<div class='form-group row'>
@@ -64,12 +64,16 @@
             
 			<input class='form-control' type='hidden' name='pict' value='<?php echo $row['pict']; ?>'>
             <button type='submit' name='submit' class='btn btn-primary'>Update User</button>
+			
         </form>
         <form method='POST' action="<?php echo base_url(); ?>">
                 <button type='submit' name='cancel' class='btn btn-primary'>Cancel</button>
         </form>
 	</div>
 	<br/>
-	<br/>
+	<br/><?php 
+			}
+		}
+		?>
 </body>
 </html>
