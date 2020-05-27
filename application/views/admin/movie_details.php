@@ -13,7 +13,7 @@
 			$genre_movie = $row['genre_movie'];
 			$sinopsis = $row['sinopsis'];
             $minimal_usia = $row['minimal_usia'];
-            $release_data = $row['release_date'];
+            $release_date = $row['release_date'];
             $waktu_film = $row['waktu_film'];
             $poster_movie = $row['poster_movie'];
             $harga_movie = $row['harga_movie'];
@@ -44,5 +44,6 @@
 			</div>
 		</div>
 	</div>
+	<?php } ?>
 </body>
 </html>

@@ -18,7 +18,7 @@ class MoviePage extends CI_Controller {
 
 	public function ShowDetail(){
 		$data['script'] = $this->load->view('include/script',NULL,TRUE);
-		$data['detail'] = $this->movies->ShowDetail($_GET['id_movie']);
+		$data['detail'] = $this->movies->ShowDetail($_GET['id']);
 		$this->load->view('admin/movie_details',$data);
 	}
 
