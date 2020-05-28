@@ -23,7 +23,7 @@
 		<form method='POST' action='<?php echo base_url('index.php/MoviePage/Edit'); ?>' enctype='multipart/form-data'>
 			<div class='form-group row'>
                 <label class='col-sm-3' for='id_movie'>ID Film:</label>
-				<input class='form-control' type='hidden' name='movieid' value='<?php echo $row['id_movie']; ?>'>
+				<input class='form-control' type='hidden' name='id_movie' value='<?php echo $row['id_movie']; ?>'>
                 <div class='col-sm-6'><input class='form-control' type='text' name='title' value='<?php echo $row["id_movie"]; ?>' disabled></div>
             </div>
             <div class='form-group row'>
