@@ -27,7 +27,17 @@ class Booking extends CI_Controller {
     $data['user'] = $this->User_model->getMyData($this->session->userdata('user_id'));
     $data['umur'] = $this->User_model->hitungUmur($this->session->userdata('user_id'));
     $this->load->view('booking', $data);
-  }
+	}
+	
+	public function showPlaying()
+  {
+    $url = $this->input->get('id');
+		$ruangan = $this->input->get('ruangan');
+		$Movie_model['movie'] = $this->Movie_model->ShowData();
+    $data['movie'] = $this->Movie_model->get_movie($url);
+    $data['kursi'] = $this->Room_model->get_kursi($ruangan);
+		$data['ruang'] = $this->Room_model->getSatuRuangan($ruangan);
+	}
 
   public function orderMovie()
   {
@@ -48,13 +58,12 @@ class Booking extends CI_Controller {
 
   public function now(){
     $Movie_model['data'] = $this->Movie_model->ShowNow();
-    $Movie_model['movie'] = $this->Movie_model->ShowData();
 		$this->load->view('user/now', $Movie_model);
 
   }
 
   public function teater(){
-    $Room_model['data'] = $this->Room_model->ShowData();
+		$Room_model['data'] = $this->Room_model->ShowData();
 		$this->load->view('user/teater', $Room_model);
   }
 
@@ -62,6 +71,12 @@ class Booking extends CI_Controller {
     $Movie_model['data'] = $this->Movie_model->ShowSoon();
 		$this->load->view('user/coming', $Movie_model);
 
+	}
+	
+	public function showTheaterPlaying(){
+		$ruangan = $this->input->get('ruangan');
+		$Movie_model['data'] = $this->Movie_model->ShowInRoom($ruangan);
+		$this->load->view('inTheater', $Movie_model);
   }
 
   public function EditUser()

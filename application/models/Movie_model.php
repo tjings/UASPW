@@ -13,6 +13,11 @@ class Movie_model extends CI_Model
 		return $query->result_array();
 	}
 
+	public function ShowInRoom($ruangan) {
+		$query = $this->db->query("SELECT * FROM movies WHERE id_ruangan = '$ruangan'");
+		return $query->result_array();
+	}
+
 	public function ShowSoon() {
 		$query = $this->db->query("SELECT * FROM movies WHERE is_released=0");
 		return $query->result_array();
