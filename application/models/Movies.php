@@ -76,7 +76,7 @@
                 'minimal_usia' => $minimal_usia,
                 'release_date' => $release_date,
                 'waktu_film' => $waktu_film,
-                'poster' => $poster_movie,
+                'poster_movie' => $poster_movie,
                 'harga_movie' => $harga_movie
 			);
 			

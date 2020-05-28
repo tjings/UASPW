@@ -75,7 +75,7 @@ class MoviePage extends CI_Controller {
 				$minimal_usia = $this->input->post('minimal_usia');
 				$release_date = $this->input->post('release_date');
 				$waktu_film = $this->input->post('waktu_film');
-				$poster_movie = $this->input->post('poster');
+				$poster_movie = $this->input->post('poster_movie');
 				$harga_movie = $this->input->post('harga_movie');
 
 				$this-> movies -> AddData($nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie);
@@ -122,7 +122,7 @@ class MoviePage extends CI_Controller {
 			$minimal_usia = $this->input->post('minimal_usia');
 			$release_date = $this->input->post('release_date');
 			$waktu_film = $this->input->post('waktu_film');
-			$poster_movie = $this->input->post('poster');
+			$poster_movie = $this->input->post('poster_movie');
 			$harga_movie = $this->input->post('harga_movie');
 
 			$this-> movies -> UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie, $this->input->post('poster'));
