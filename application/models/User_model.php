@@ -7,7 +7,8 @@ class User_model extends CI_Model
     public function get_user() {
       $query = $this->db->get('login');
       return $query->result_array();
-    }
+		}
+		
   public function getMyData($user_id)
   {
     $this->db->select('*');
