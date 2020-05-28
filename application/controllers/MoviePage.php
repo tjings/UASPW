@@ -7,6 +7,11 @@ class MoviePage extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Movies');
+		$this->load->library('form_validation');
+
+		if($this->session->userdata('role') != 'admin') {
+			redirect('login');
+		}
 	}
 
 	public function index(){
@@ -27,67 +32,40 @@ class MoviePage extends CI_Controller {
 		$this->load->view('admin/movie_add',$data);
 	}
 
-	public function validate_image(){
-		$config = array(
-			'allowed_types'=>'jpg|png',
-			'upload_path'=> 'assets/posters',
-			'max_size'=>1024
-			);
-
-			$this->load->library('upload', $config);
-
-			if (!$this->upload->do_upload('poster'))
-			{
-				$this->form_validation->set_message('validate_image',$this->upload->display_errors());
-				return false;
-			} else {
-				return true;
-			}
-	}
-
-	public function Add()
+	public function movie_add()
 	{
-		$this->form_validation->set_rules('nama_movie','NAMA MOVIE','required|alpha_numeric');
-		$this->form_validation->set_rules('genre_movie','GENRE MOVIE','required|numeric|max_length[100]|min_length[50]');
-		$this->form_validation->set_message('required', 'You Must Provide a String !');
+		$this->form_validation->set_rules('nama_movie','NAMA MOVIE','required');
+		$this->form_validation->set_rules('genre_movie','GENRE MOVIE','required|numeric|max_length[100]');
 		$this->form_validation->set_rules('sinopsis','SINOPSIS','required|max_length[100]');
 		$this->form_validation->set_rules('minimal_usia','MINIMAL USIA','required|numeric');
-		$this->form_validation->set_rules('release_date','RELEASE DATE','required|numeric');
+		$this->form_validation->set_rules('release_date','RELEASE DATE','required');
 		$this->form_validation->set_rules('waktu_film','WAKTU FILM','required|numeric');
-		$this->form_validation->set_rules('poster', 'Image', 'callback_validate_image');
-		$this->form_validation->set_rules('harga_movie','HARGA MOVIE','required|alpha_numeric');
-	
- 
-		if($this->form_validation->run() != false){
-			// $config['upload_path'] = "./assets/posters/";
-			// $config['allowed_types'] = "gif|jpg|png";pp
-			// $config['max_size'] = "100000";
+		$this->form_validation->set_rules('harga_movie','HARGA MOVIE','required');
+
+		if($this->form_validation->run() != FALSE){
+			$config['upload_path'] = "./assets/posters/";
+			$config['allowed_types'] = "gif|jpg|png";
+			$config['encrypt_name'] = TRUE;
 			$this->load->library('upload',$config);
 			
-			$stat = $this->upload->do_upload('poster');
-			$poster_movie = '/assets/posters/'.$_FILES['poster']['name'];
+			$stat = $this->upload->do_upload('poster_movie');
+			$data = $this->upload->data();
+			$poster_movie = '/assets/posters/' . $data['file_name'];
 
-			if($stat) {
+			$nama_movie = $this->input->post('nama_movie');
+			$genre_movie = $this->input->post('genre_movie');
+			$sinopsis = $this->input->post('sinopsis');
+			$minimal_usia = $this->input->post('minimal_usia');
+			$release_date = $this->input->post('release_date');
+			$waktu_film = $this->input->post('waktu_film');
+			$poster_movie = $poster_movie;
+			$harga_movie = $this->input->post('harga_movie');
 
-				$nama_movie = $this->input->post('nama_movie');
-				$genre_movie = $this->input->post('genre_movie');
-				$sinopsis = $this->input->post('sinopsis');
-				$minimal_usia = $this->input->post('minimal_usia');
-				$release_date = $this->input->post('release_date');
-				$waktu_film = $this->input->post('waktu_film');
-				$poster_movie = $this->input->post('poster_movie');
-				$harga_movie = $this->input->post('harga_movie');
-
-				$this-> Movies -> AddData($nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie);
-				redirect('MoviePage','refresh');
-
-			} else {
-				echo "gagal";
-			}
-		}else{
-			
+			$this->Movies->AddData($nama_movie, $genre_movie, $sinopsis, $minimal_usia, $release_date, $waktu_film, $poster_movie, $harga_movie);
+			redirect('MoviePage', 'refresh');
+		}
+		else{
 			$data['script'] = $this->load->view('include/script',NULL,TRUE);
-			
 			$this->load->view('admin/movie_add', $data);
 		}
 	}
