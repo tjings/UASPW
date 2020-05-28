@@ -6,11 +6,11 @@ class MoviePage extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('movies');
+		$this->load->model('Movies');
 	}
 
 	public function index(){
-		$movies['data'] = $this->movies->ShowData();
+		$movies['data'] = $this->Movies->ShowData();
 		$data['script'] = $this->load->view('include/script.php',NULL,TRUE);
 		$data['table'] = $this->load->view('template/table.php',$movies, TRUE);
 		$this->load->view('admin/dashboard.php',$data);
@@ -18,7 +18,7 @@ class MoviePage extends CI_Controller {
 
 	public function ShowDetail(){
 		$data['script'] = $this->load->view('include/script',NULL,TRUE);
-		$data['detail'] = $this->movies->ShowDetail($_GET['id']);
+		$data['detail'] = $this->Movies->ShowDetail($_GET['id']);
 		$this->load->view('admin/movie_details',$data);
 	}
 
@@ -78,7 +78,7 @@ class MoviePage extends CI_Controller {
 				$poster_movie = $this->input->post('poster_movie');
 				$harga_movie = $this->input->post('harga_movie');
 
-				$this-> movies -> AddData($nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie);
+				$this-> Movies -> AddData($nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie);
 				redirect('MoviePage','refresh');
 
 			} else {
@@ -97,7 +97,7 @@ class MoviePage extends CI_Controller {
 		
 		$data['script'] = $this->load->view('include/script',NULL,TRUE);
 	
-		$data['param'] = $this->movies->ShowDetail($param);
+		$data['param'] = $this->Movies->ShowDetail($param);
 
 		$this->load->view('admin/movie_edit',$data);
 	}
@@ -125,7 +125,7 @@ class MoviePage extends CI_Controller {
 			$poster_movie = $this->input->post('poster_movie');
 			$harga_movie = $this->input->post('harga_movie');
 
-			$this-> movies -> UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie, $this->input->post('poster'));
+			$this-> Movies -> UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie, $this->input->post('poster'));
 			redirect('MoviePage','refresh');
 
 		}else{
@@ -142,7 +142,7 @@ class MoviePage extends CI_Controller {
 			$poster_movie = $this->input->post('poster');
 			$harga_movie = $this->input->post('harga_movie');
 
-			$this-> movies -> UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie);
+			$this-> Movies -> UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie);
 			redirect('MoviePage','refresh');
 
 		}
