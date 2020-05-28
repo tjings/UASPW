@@ -134,12 +134,19 @@ class Booking extends CI_Controller {
     $this->session->set_flashdata{'filterMessage',"Your Sorted Result"};
 
     if($param === 'ascending'){
+      $sorted_movie = $this->movie_model->sortMovie(2);
+      $data = call_fronted($this);
+      $data['movies'] = $sorted_movie;
+      $this->load->view("user/dashboard",$data);
+    }
+    else if($param === 'descending'){
       $sorted_movie = $this->movie_model->sortMovie(1);
+      $data = call_frontend($this);
       $data['movies'] = $sorted_movie;
       $this->load->view("user/dashboard",$data);
     }
     else{
-      redirect('user/dashboard')
+      redirect('dashboard')
     }
   }
 
