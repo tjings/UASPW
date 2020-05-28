@@ -60,4 +60,18 @@ class Movie_model extends CI_Model
     $this->db->replace('movies', $data);
   }
 
+  public function sortMovie($choice){
+    $this->db->select('*');
+    $this->db->from('movies');
+
+    if($choice === 1){
+      $this->db->order_by('movie_name DESC');
+    }
+    else{
+      $this->order_by('movie_name ASC');
+    }
+    $query = $this->db->get();
+
+    return $query->result_array();
+  }
 }

@@ -127,7 +127,21 @@ class Booking extends CI_Controller {
 			redirect('Booking','refresh');
 
 		}
-	}
+  }
+  
+  public function sortByName(){
+    $param = $this->uri->segment(3);
+    $this->session->set_flashdata{'filterMessage',"Your Sorted Result"};
+
+    if($param === 'ascending'){
+      $sorted_movie = $this->movie_model->sortMovie(1);
+      $data['movies'] = $sorted_movie;
+      $this->load->view("user/dashboard",$data);
+    }
+    else{
+      redirect('user/dashboard')
+    }
+  }
 
 
 }
