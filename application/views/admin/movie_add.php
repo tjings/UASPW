@@ -15,7 +15,8 @@
 				</p>
 			</div>
 	</div>
-	<div class="container" style="margin-top: 35px;">
+    <div class="container" style="margin-top: 35px;">
+        <?= validation_errors(); ?>
 		<?php echo form_open_multipart('MoviePage/movie_add'); ?>
 		<div class="form-group">
             <label>Nama Film :</label>
@@ -44,15 +45,15 @@
             <input type="number" name="waktu_film" id="waktu_film">
         </div>
         <div class="form-group">
-            <label>Poster :</label>
-            <input type="_FILES_" name="poster_movie" id="poster_movie">
-        </div>
-        <div class="form-group">
             <label>Harga :</label>
             <input type="text" name="harga_movie" id="harga_movie">
         </div>
+        <div class="form-group">
+            <label>Poster</label>
+            <input type="file" name="poster_movie">
+        </div>
 
-		<button type="submit" name="submit" class="btn btn-primary btn-sm">Tambah Film</button>
+		<input type="submit" name="submit" class="btn btn-primary btn-sm" value="Tambah Film">
         <a class="button" href="dashboard.php">cancel</button>
 		<?php echo form_close(); ?>
 	</div>
