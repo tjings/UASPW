@@ -40,19 +40,21 @@
 		public function AddData($nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie)
 		{
 			$values = array(
+								'id_movie' => '',
                 'nama_movie' => $nama_movie,
                 'genre_movie' => $genre_movie,
                 'sinopsis' => $sinopsis,
                 'minimal_usia' => $minimal_usia,
                 'release_date' => $release_date,
                 'waktu_film' => $waktu_film,
-                'poster' => $poster_movie,
-                'harga_movie' => $harga_movie
+                'poster_movie' => $poster_movie,
+								'harga_movie' => $harga_movie,
+								'id_ruangan' => 1
 			);
 			
 			$this->db->trans_begin();
 
-			$this->db->insert('movies',$values);
+			$this->db->insert('movies', $values);
 
 			$this->db->trans_complete();
 
