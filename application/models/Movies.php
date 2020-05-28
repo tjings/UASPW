@@ -70,7 +70,7 @@
 		{
 			$values = array(
                 'id_movie' => $id_movie,
-				'nama_movie' => $nama_movie,
+								'nama_movie' => $nama_movie,
                 'genre_movie' => $genre_movie,
                 'sinopsis' => $sinopsis,
                 'minimal_usia' => $minimal_usia,
@@ -82,7 +82,8 @@
 			
 			$this->db->trans_begin();
 
-			$this->db->Replace('movies',$values);
+			$this->db->where('id_movie', $id_movie);
+			$this->db->update('movies', $values);
 
 			$this->db->trans_complete();
 
@@ -92,7 +93,7 @@
 				return FALSE;
 			}else
 			{
-				//Type your code here ...
+				
 			}
 		}
 	}
