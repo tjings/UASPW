@@ -131,7 +131,7 @@ class Booking extends CI_Controller {
   
   public function sortByName(){
     $param = $this->uri->segment(3);
-    $this->session->set_flashdata{'filterMessage',"Your Sorted Result"};
+    $this->session->set_flashdata('filterMessage', "Your Sorted Result");
 
     if($param === 'ascending'){
       $sorted_movie = $this->movie_model->sortMovie(2);
@@ -146,7 +146,7 @@ class Booking extends CI_Controller {
       $this->load->view("user/dashboard",$data);
     }
     else{
-      redirect('dashboard')
+      redirect('dashboard');
     }
   }
 
