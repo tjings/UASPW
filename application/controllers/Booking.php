@@ -68,9 +68,7 @@ class Booking extends CI_Controller {
 
 	{
     $data['script'] = $this->load->view('include/script',NULL,TRUE);
-    $data['param'] = $this->User_model->get_user();
-		
-
+    $data['param'] = $this->User_model->getMyData($this->session->userdata('user_id'));
 		$this->load->view('user/user_edit',$data);
 	}
 
