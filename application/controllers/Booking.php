@@ -39,9 +39,19 @@ class Booking extends CI_Controller {
 		$data['ruang'] = $this->Room_model->getSatuRuangan($ruangan);
 	}
 
+  public function showOrderMovie()
+  {
+    $data['id_ruangan'] = $this->input->post('id_ruangan');
+    $fake = $this->input->post('id_movie');
+    $data['id_kursi'] = $this->input->post('kursi');
+    $data['movie'] = $this->Movie_model->get_movie($fake);
+
+    $this->load->view('user/konfirmasiBooking', $data);
+  }
+
   public function orderMovie()
   {
-    $harga_movie = $this->input->post('harga') * $this->input->post('jmlTiket');
+    $harga_movie = $this->input->post('harga');
 
     $data = [
       'id_order' => '',
@@ -84,6 +94,7 @@ class Booking extends CI_Controller {
 	{
     $data['script'] = $this->load->view('include/script',NULL,TRUE);
     $data['param'] = $this->User_model->getMyData($this->session->userdata('user_id'));
+    $data['history'] = $this->User_model->getHistory($this->session->userdata('user_id'));
 		$this->load->view('user/user_edit',$data);
 	}
 
@@ -131,9 +142,33 @@ class Booking extends CI_Controller {
   
   public function sortByName()
    {
+      $param = $this->uri->segment(3);
       $data['title'] = "Sort Movie";
-      $this->db->order_by("nama_movie", "asc");
-      $data['query'] = $this->db->get('movies');
+
+      if($param == 'descending') {
+        $this->db->order_by("nama_movie", "desc");
+      }
+      else {
+        $this->db->order_by("nama_movie", "asc");
+      }
+      $data['data'] = $this->db->get('movies')->result_array();
       $this->load->view('user/now', $data);
    }
+
+  public function search()
+  {
+    $keyword = $this->input->get('search');
+    $data['data'] = $this->Movie_model->searchMovie($keyword);
+    $this->load->view('user/now', $data);
+  }
+
+  public function filter()
+  {
+    $user = $this->User_model->getMyData($this->session->userdata('user_id'));
+    $tanggal = new DateTime($user['tanggal_lahir']);
+    $today = new DateTime('today');
+    $usiaku = $today->diff($tanggal)->y;
+    $data['data'] = $this->Movie_model->filterYangBisaKutonton($usiaku); 
+    $this->load->view('user/now', $data);
+  }
 }

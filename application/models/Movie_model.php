@@ -74,4 +74,20 @@ class Movie_model extends CI_Model
 
     return $query->result_array();
   }
+
+  public function searchMovie($keyword)
+  {
+    $this->db->select('*');
+    $this->db->from('movies');
+    $this->db->like('nama_movie', $keyword);
+    return $this->db->get()->result_array();
+  }
+
+  public function filterYangBisaKutonton($usia)
+  {
+    $this->db->select('*');
+    $this->db->from('movies');
+    $this->db->where('minimal_usia <', $usia);
+    return $this->db->get()->result_array();
+  }
 }
