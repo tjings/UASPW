@@ -75,4 +75,13 @@ class User_model extends CI_Model
 			
 		}
 
+	public function getHistory($id)
+	{
+		$this->db->select('*');
+		$this->db->from('orders');
+		$this->db->join('movies', 'orders.id_movie = movies.id_movie');
+		$this->db->where('id_user', $id);
+		return $this->db->get()->result_array();
+	}
+
 }

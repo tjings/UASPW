@@ -67,6 +67,20 @@
 		<form method='POST' action="<?php echo base_url(); ?>">
 			<button type='submit' name='cancel' class='btn btn-primary'>Cancel</button>
 		</form>
+
+		<p>History</p>
+		<?php foreach($history as $i) {
+			$id_mov = $i['id_movie'];
+			$nama_mv = $i['nama_movie'];
+			$genre = $i['genre_movie'];
+			$waktu = $i['waktu_film'];
+
+			echo "Movie name: $nama_mv";
+			echo "Genre movie: $genre";
+			echo "Waktu: $waktu";
+			echo "<br><br>";
+		}
+		?>
 	</div>
 	<br />
 	<br />
