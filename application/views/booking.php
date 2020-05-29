@@ -143,7 +143,7 @@
         </div>
       </div>
 
-      <form action="<?= site_url() . "/booking/orderMovie"; ?>" method="POST">
+      <form action="<?= site_url() . "/booking/showOrderMovie"; ?>" method="POST">
         <input type="hidden" name="id_ruangan" value="<?php echo $this->input->get('ruangan'); ?>">
         <input type="hidden" name="id_movie" value="<?php echo $this->input->get('id'); ?>">
         <input type="hidden" name="harga" value="<?= $harga; ?>">
