@@ -38,7 +38,15 @@
     </div>
 </nav>
     <div class="container" style="padding-top: 100px;">
-
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sorting
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">....</a></li>
+            <li><a href="#">....</a></li>
+            <li><a href="#">....</a></li>
+        </ul>
+    </div>
         <div class="row" style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
             <?php foreach ((array) $data as $i) : 
                 $id = $i['id_movie'];
