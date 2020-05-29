@@ -16,14 +16,15 @@
      }
  
      public function registrasi() {
-         $this->form_validation->set_rules('name', 'NAME','required');
-         $this->form_validation->set_rules('tanggal_lahir','TANGGAL LAHIR','required');
-         $this->form_validation->set_rules('username', 'USERNAME','required');
-         $this->form_validation->set_rules('password','PASSWORD','required');
-         $this->form_validation->set_rules('password_conf','PASSWORD','required|matches[password]');
+         $this->form_validation->set_rules('name', 'name','required');
+         $this->form_validation->set_rules('tanggal_lahir','birthdate','required');
+         $this->form_validation->set_rules('username', 'username','required');
+         $this->form_validation->set_rules('password','password','required');
+         $this->form_validation->set_rules('password_conf','confirm password','required|matches[password]');
          
          if($this->form_validation->run() == FALSE) {
-            redirect('register');
+            $gagal['fail'] = "Register Unsuccess!";
+            $this->load->view('failedregister', $gagal);
          }
          else {
              $data['username'] =    $this->input->post('username');
@@ -34,9 +35,9 @@
  
              $this->Register_model->daftar($data);
              
-             $pesan['message'] = "Register Success!";
+             $berhasil['message'] = "Register Success!";
              
-             $this->load->view('success', $pesan);
+             $this->load->view('successregister', $berhasil);
          }
      }
  }

@@ -25,10 +25,12 @@
                     <div class="form-group">
                         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input type="text" name="username" id="username" placeholder="Your Username"/>
+                        <?php echo form_error('username'); ?>
                     </div>
                     <div class="form-group">
                         <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                         <input type="password" name="password" id="password" placeholder="Password"/>
+                        <?php echo form_error('password'); ?>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
@@ -37,6 +39,7 @@
                     <div class="form-group form-button">
                         <input type="submit" name="signin" id="signin" class="form-submit" style="background-color: #114B4C;" value="Log in"/>
                     </div>
+                    <h7><?php echo $fail; ?></h7>
                 </form>
             </div>
         </div>

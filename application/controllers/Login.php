@@ -6,9 +6,7 @@ class Login extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        
         $this->load->library('form_validation');
-        
         $this->load->model('admin');
     }
 
@@ -25,11 +23,8 @@ class Login extends CI_Controller {
 
     public function login()
     {
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-
-        $this->form_validation->set_message('required', '<div class="alert alert-danger" style="margin-top: 3px">
-            <div class="header"><b><i class="fa fa-exclamation-circle"></i> {field}</b> harus diisi</div></div>');
+        $this->form_validation->set_rules('username', 'username', 'required');
+        $this->form_validation->set_rules('password', 'password', 'required');
 
         if ($this->form_validation->run() == TRUE) {
             $username = $this->input->post("username", TRUE);
@@ -54,9 +49,8 @@ class Login extends CI_Controller {
             }
         }
         else {
-            $data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">
-                <div class="header"><b><i class="fa fa-exclamation-circle"></i> ERROR</b> username atau password salah!</div></div>';
-            redirect('login');
+            $gagal['fail'] = "Username or password wrong!";
+            $this->load->view('failedlogin',$gagal);
         }
     }
 }
