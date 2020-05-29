@@ -129,26 +129,11 @@ class Booking extends CI_Controller {
 		}
   }
   
-  public function sortByName(){
-    $param = $this->uri->segment(3);
-    $this->session->set_flashdata('filterMessage', "Your Sorted Result");
-
-    if($param === 'ascending'){
-      $sorted_movie = $this->movie_model->sortMovie(2);
-      $data = call_fronted($this);
-      $data['movies'] = $sorted_movie;
-      $this->load->view("user/now",$data);
-    }
-    else if($param === 'descending'){
-      $sorted_movie = $this->movie_model->sortMovie(1);
-      $data = call_frontend($this);
-      $data['movies'] = $sorted_movie;
-      $this->load->view("user/now",$data);
-    }
-    else{
-      redirect('now');
-    }
-  }
-
-
+  public function sortByName()
+   {
+      $data['title'] = "Sort Movie";
+      $this->db->order_by("nama_movie", "asc");
+      $data['query'] = $this->db->get('movies');
+      $this->load->view('user/now', $data);
+   }
 }

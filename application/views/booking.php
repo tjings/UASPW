@@ -16,7 +16,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <a style="color: #FFFFFF" class="navbar-brand" href="<?php echo site_url('dashboard')?>">
-          <img src="<?= base_url() . "/assets/images/logo.jpg"; ?>" width="40" height="35" class="d-inline-block-align-top" alt="Image Logo"/>
+          <img src="<?= base_url() . "/assets/images/logo.jpg"; ?>" style="border-radius: 25px;" width="40" height="35" class="d-inline-block-align-top" alt="Image Logo"/>
         </a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">

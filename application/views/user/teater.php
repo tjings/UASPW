@@ -39,17 +39,18 @@
     </div>
 </nav>
 
-<div class="container" style="padding-top: 100px;">
+<div class="container" style="padding-top: 200px;">
 	<div class="row">
         <?php foreach ((array) $data as $i) : 
             $room = $i['nama_ruangan'];
 			$ruangan = $i['id_ruangan'];
+			$logo = base_url() . $i['logo'];
 			$pathToShowRoom = site_url() . "/booking/showTheaterPlaying?ruangan=$ruangan";
 			?>
 		<div class="col-md-4">
 			<div class="card mb-3" style="border: none;">
 				<a href="<?=$pathToShowRoom?>">
-                    <img style="height: 400px; width: 400px;"src="<?= base_url() . "/assets/images/alpha.jpg"; ?>" class="card-img-top">
+                    <img style="height: 370px; width: 370px;"src="<?=$logo ?>" class="card-img-top">
                 </a>
 				<div class="card-body">
 					<h5 class="card-title" style="text-align: center"><?=$room?></h5>
