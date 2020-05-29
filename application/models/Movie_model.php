@@ -65,10 +65,10 @@ class Movie_model extends CI_Model
     $this->db->from('movies');
 
     if($choice === 1){
-      $this->db->order_by('movie_name DESC');
+      $this->db->order_by("movie_name", "dsc");
     }
     else{
-      $this->order_by('movie_name ASC');
+      $this->order_by("movie_name", "asc");
     }
     $query = $this->db->get();
 

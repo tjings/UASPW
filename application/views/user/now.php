@@ -42,7 +42,7 @@
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sorting
         </button>
         <ul class="dropdown-menu">
-            <li><a href="#">....</a></li>
+            <li><a href="<?php echo site_url('booking/sortByName')?>">Sort Movie</a></li>
             <li><a href="#">....</a></li>
             <li><a href="#">....</a></li>
         </ul>

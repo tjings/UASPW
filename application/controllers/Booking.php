@@ -137,16 +137,16 @@ class Booking extends CI_Controller {
       $sorted_movie = $this->movie_model->sortMovie(2);
       $data = call_fronted($this);
       $data['movies'] = $sorted_movie;
-      $this->load->view("user/dashboard",$data);
+      $this->load->view("user/now",$data);
     }
     else if($param === 'descending'){
       $sorted_movie = $this->movie_model->sortMovie(1);
       $data = call_frontend($this);
       $data['movies'] = $sorted_movie;
-      $this->load->view("user/dashboard",$data);
+      $this->load->view("user/now",$data);
     }
     else{
-      redirect('dashboard');
+      redirect('now');
     }
   }
 
