@@ -35,6 +35,10 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
         <div class="navbar-form navbar-right">
+            <form action="<?= site_url(). "/booking/search"; ?>" method="GET">
+                <input type="text" name="search" placeholder="Search...">
+                <input type="submit" value="Search">
+            </form>
             <a href="<?php echo base_url() ?>index.php/dashboard/logout" type="submit" class="btn btn-light"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
     </div>
@@ -44,9 +48,9 @@
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sorting
         </button>
         <ul class="dropdown-menu">
-            <li><a href="<?php echo site_url('booking/sortByName')?>">Sort Movie</a></li>
-            <li><a href="#">....</a></li>
-            <li><a href="#">....</a></li>
+            <li><a href="<?php echo site_url('booking/sortByName/descending')?>">Sort Movie (DSC)</a></li>
+            <li><a href="<?php echo site_url('booking/sortByName/ascending')?>">Sort Movie (ASC)</a></li>
+            <li><a href="<?php echo site_url('booking/filter'); ?>">Filter Yang Bisa Kutonton</a></li>
         </ul>
     </div>
         <div class="row" style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
