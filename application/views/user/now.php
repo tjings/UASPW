@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/dashboard.css"; ?>">
     </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #005350;" >
+<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #0C7A7A;" >
     <button class="navbar-toggler"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <img src="https://pngimage.net/wp-content/uploads/2018/06/white-menu-icon-png-8.png" width="40" height="35" class="d-inline-block-align-top" alt="Image Logo"/>
     </button>

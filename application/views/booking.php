@@ -10,12 +10,14 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/dashboard.css"; ?>">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #005350;" >
+<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #0C7A7A;" >
     <button class="navbar-toggler"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <img src="https://pngimage.net/wp-content/uploads/2018/06/white-menu-icon-png-8.png" width="40" height="35" class="d-inline-block-align-top" alt="Image Logo"/>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <a style="color: #FFFFFF" class="navbar-brand" href="<?php echo site_url('dashboard')?>">Home</a>
+        <a style="color: #FFFFFF" class="navbar-brand" href="<?php echo site_url('dashboard')?>">
+          <img src="<?= base_url() . "/assets/images/logo.jpg"; ?>" width="40" height="35" class="d-inline-block-align-top" alt="Image Logo"/>
+        </a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <a style="color: #FFFFFF" class="nav-link text-light" href="<?php echo site_url('booking/now') ?>"> Now Playing</a>
@@ -37,7 +39,7 @@
         </div>
     </div>
 </nav>
-<div class="container" style="padding-top: 100px;">
+<div class="container" style="padding-top: 50px;">
   <?php
     $id = $movie['id_movie'];
     $nama = $movie['nama_movie'];
@@ -71,12 +73,17 @@
         </div>
         <div class="col-md-3 col-sm-6 col-xs-6">
           <div class="row" style="max-width: 200px; margin-left:20px;">
-          <p><span class="glyphicon glyphicon-time"></span><?php echo " $lama - Minutes" ?></p>
-          <p><i class="fa fa-coins"></i><?php echo "Rp $harga"?></p>
-          <p><a class="btn btn-default btn-outline disabled" style="color: #005350; font-weight: bold;"><?php echo $usia ?></a></p>
-          <p><button class="btn icon-btn" style="width: 90%; background-color: #00807b; color: white;">PLAYING AT</button></p>
-          <p><button class="btn icon-btn" style="width: 90%; background-color: #00807b; color: white;">BUY TICKET</button></p>
-          <p><button class="btn icon-btn" style="width: 90%; background-color: #00807b; color: white;">TRAILER</button></p>
+            <p><span class="glyphicon glyphicon-time"></span><?php echo " $lama - Minutes" ?></p>
+          </div>
+          <div class="row" style="max-width: 200px; margin-left:20px;">
+            <p><?php echo "Rp $harga"?></p>
+          </div>
+          <div class="row" style="max-width: 200px; margin-left:20px;">
+            <p><a class="btn btn-default btn-outline disabled" style="color: #005350; font-weight: bold;"><?php echo $usia ?></a></p>
+          </div>
+          <div class="row" style="max-width: 200px; margin-left:20px;">
+          <p><button class="btn icon-btn" style="width: 125%; background-color: #00807b; color: white;">PLAYING AT</button></p>
+          <p><button class="btn icon-btn" style="width: 125%; background-color: #00807b; color: white;">BUY TICKET</button></p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6">

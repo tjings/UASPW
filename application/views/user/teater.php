@@ -11,7 +11,7 @@
         
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #005350;" >
+<nav class="navbar navbar-expand-lg navbar-fixed-top" style="background-color: #0C7A7A;" >
     <button class="navbar-toggler"type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <img src="https://pngimage.net/wp-content/uploads/2018/06/white-menu-icon-png-8.png" width="40" height="35" class="d-inline-block-align-top" alt="Image Logo"/>
     </button>
@@ -40,18 +40,19 @@
 </nav>
 
 <div class="container" style="padding-top: 100px;">
-	<div class="row" style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
-		<?php foreach ((array) $data as $i) : 
+	<div class="row">
+        <?php foreach ((array) $data as $i) : 
+            $room = $i['nama_ruangan'];
 			$ruangan = $i['id_ruangan'];
 			$pathToShowRoom = site_url() . "/booking/showTheaterPlaying?ruangan=$ruangan";
 			?>
 		<div class="col-md-4">
-			<div class="card mb-3"style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
+			<div class="card mb-3" style="border: none;">
 				<a href="<?=$pathToShowRoom?>">
-					<img style="height: 500px;"src="" class="card-img-top">
-				</a>
+                    <img style="height: 400px; width: 400px;"src="<?= base_url() . "/assets/images/alpha.jpg"; ?>" class="card-img-top">
+                </a>
 				<div class="card-body">
-					<h5 class="card-title" style="text-align: center"><?=$ruangan?></h5>
+					<h5 class="card-title" style="text-align: center"><?=$room?></h5>
 					
 				</div>
 			</div>
