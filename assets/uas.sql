@@ -236,7 +236,7 @@ CREATE TABLE `ruangan` (
 -- Dumping data for table `ruangan`
 --
 
-INSERT INTO `ruangan` (`id_ruangan`, `nama_ruan gan`, `lebar_ruangan`, `panjang_ruangan`, `logo`) VALUES
+INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`, `lebar_ruangan`, `panjang_ruangan`, `logo`) VALUES
 (1, 'Alpha', 5, 5, '/assets/images/alpha.jpg'),
 (2, 'Beta', 5, 5, '/assets/images/betta.jpg'),
 (3, 'Gamma', 4, 2, '/assets/images/gamma.jpg');
