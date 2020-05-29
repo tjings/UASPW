@@ -125,6 +125,13 @@ class MoviePage extends CI_Controller {
 
 		}
 	}
+
+  public function deleteMovie()
+  {
+    $id = $this->uri->segment(3);
+    $this->Movies->deleteMovie($id);
+    redirect('MoviePage');
+  }
 }
 
 ?>
