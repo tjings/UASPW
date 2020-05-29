@@ -68,7 +68,7 @@ class Movie_model extends CI_Model
       $this->db->order_by("nama_movie", "dsc");
     }
     else{
-      $this->order_by("nama_movie", "asc");
+      $this->db->order_by("nama_movie", "asc");
     }
     $query = $this->db->get();
 
