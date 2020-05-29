@@ -228,17 +228,18 @@ CREATE TABLE `ruangan` (
   `id_ruangan` int(11) NOT NULL,
   `nama_ruangan` varchar(255) DEFAULT NULL,
   `lebar_ruangan` int(11) NOT NULL,
-  `panjang_ruangan` int(11) NOT NULL
+  `panjang_ruangan` int(11) NOT NULL,
+	`logo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ruangan`
 --
 
-INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`, `lebar_ruangan`, `panjang_ruangan`) VALUES
-(1, 'Alpha', 5, 5),
-(2, 'Beta', 5, 5),
-(3, 'Gamma', 4, 2);
+INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`, `lebar_ruangan`, `panjang_ruangan`, `logo`) VALUES
+(1, 'Alpha', 5, 5, 'assets/posters/alfa.jpg'),
+(2, 'Beta', 5, 5, 'assets/posters/beta.jpg'),
+(3, 'Gamma', 4, 2, 'assets/posters/gamma.jpg');
 
 --
 -- Indexes for dumped tables
