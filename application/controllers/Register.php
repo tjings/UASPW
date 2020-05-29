@@ -34,7 +34,7 @@
  
              $this->Register_model->daftar($data);
              
-             $pesan['message'] = "Pendaftaran berhasil";
+             $pesan['message'] = "Register Success!";
              
              $this->load->view('success', $pesan);
          }
