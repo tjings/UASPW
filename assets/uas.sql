@@ -211,7 +211,7 @@ INSERT INTO `movies` VALUES
 CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `id_movie` int(11) NOT NULL,
+  `id_movie` int(11),
   `id_ruangan` int(11) NOT NULL,
   `id_kursi` varchar(11) NOT NULL,
   `jumlah_tiket` int(11) NOT NULL,
@@ -330,7 +330,7 @@ ALTER TABLE `movies`
 --
 ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `login` (`id_user`),
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_movie`) REFERENCES `movies` (`id_movie`),
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`id_movie`) REFERENCES `movies` (`id_movie`) ON DELETE SET NULL,
   ADD CONSTRAINT `orders_ibfk_3` FOREIGN KEY (`id_ruangan`) REFERENCES `ruangan` (`id_ruangan`),
   ADD CONSTRAINT `orders_ibfk_4` FOREIGN KEY (`id_kursi`) REFERENCES `kursi` (`id_kursi`);
 COMMIT;
