@@ -68,6 +68,12 @@
 			}
 		}
 
+		public function deleteMovie($id)
+		{
+			$this->db->where('id_movie', $id);
+			$this->db->delete('movies');
+		}
+
 		public function UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie)
 		{
 			$values = array(

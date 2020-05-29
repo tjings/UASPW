@@ -21,6 +21,8 @@
 
 				$detail = $base_url."index.php/MoviePage/ShowDetail";
 				$id = $row['id_movie'];
+				$path_del = site_url() . "/MoviePage/deleteMovie/$id";
+
 				echo "<tr>";
 					echo "<td>" .$row['id_movie'] ."</td>";
 					echo "<td>" .$row['nama_movie'] ."</td>";
@@ -44,6 +46,7 @@
 								echo "<span class='glyphicon glyphicon-edit'></span>";
 							echo "</button>";
 						echo "</a>";
+						echo "<a href=$path_del>Delete</a>";
 					echo "</td>";
 				echo "</tr>";
 			}
