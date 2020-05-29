@@ -47,10 +47,14 @@ class Login extends CI_Controller {
                     redirect('dashboard');
                 }
             }
+            else {
+                $gagal['fail'] = "Username or password wrong!";
+                $this->load->view('failedlogin', $gagal);
+            }
         }
         else {
             $gagal['fail'] = "Username or password wrong!";
-            $this->load->view('failedlogin',$gagal);
+            $this->load->view('failedlogin', $gagal);
         }
     }
 }
