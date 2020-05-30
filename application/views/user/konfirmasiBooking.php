@@ -63,10 +63,10 @@
     <input type="hidden" name="id_ruangan" value="<?= $id_ruangan; ?>">
     <input type="hidden" name="id_movie" value="<?= $movie['id_movie']; ?>">
     <input type="hidden" name="harga" value="<?= $movie['harga_movie']; ?>">
-    <input type="hidden" id="tempatKursi" value="<?= $id_kursi; ?>" name="kursi" readonly required autocomplete="off" />
-    
-  </form><br><br>
-  <button type="submit" style="background-color: #06C6AF;">Submit</button><br><br><br><br>
+    <input type="hidden" id="tempatKursi" value="<?= $id_kursi; ?>" name="kursi" readonly required autocomplete="off" /><br><br>
+    <button type="submit" style="background-color: #06C6AF; margin-right:54%;">Submit</button><br><br><br><br>
+  </form>
+  
   <a href="previous_url"><button style="background-color: #06C6AF;">Back</button></a>
   </div>
 </body>
