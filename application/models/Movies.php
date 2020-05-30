@@ -37,7 +37,7 @@
 			}
 		}
 
-		public function AddData($nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie)
+		public function AddData($nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie,$id_ruangan)
 		{
 			$values = array(
 								'id_movie' => '',
@@ -48,8 +48,8 @@
                 'release_date' => $release_date,
                 'waktu_film' => $waktu_film,
                 'poster_movie' => $poster_movie,
-								'harga_movie' => $harga_movie,
-								'id_ruangan' => 1
+				'harga_movie' => $harga_movie,
+				'id_ruangan' => $id_ruangan
 			);
 			
 			$this->db->trans_begin();

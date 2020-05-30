@@ -52,6 +52,15 @@
             <label>Poster</label>
             <input type="file" name="poster_movie">
         </div>
+        <div class="form-group">
+            <label for="id_ruangan">Ruangan:</label>
+
+            <select name="id_ruangan" id="id_ruangan">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            </select>
+        </div>
 
 		<input type="submit" name="submit" class="btn btn-primary btn-sm" value="Tambah Film">
         <a class="button" href="dashboard.php">cancel</button>
