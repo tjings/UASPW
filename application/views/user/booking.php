@@ -79,7 +79,19 @@
           </div>
           <div class="row" style="max-width: 200px; margin-left:20px;">
           <p><a href="<?php echo site_url('') ?>"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;">PLAYING AT</button></a></p>
+          <?php
+		        $id = $movie['id_movie'];
+            $ruangan = $movie['id_ruangan'];
+		        $harga = $movie['harga_movie'];
+            if ($umur < $movie['minimal_usia']) {
+              $min = $movie['minimal_usia'];
+            ?>
+              <p><a href="<?=$pathToBook ?>"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;" disabled>BUY TICKET</button></a></p>
+              <?php  echo "Maaf anda terlalu muda! Minimal usia untuk menonton adalah $min. Usia Anda: $umur tahun!";
+            } else {
+          ?>
           <p><a href="<?=$pathToBook ?>"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;">BUY TICKET</button></a></p>
+          <?php } ?>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6">
