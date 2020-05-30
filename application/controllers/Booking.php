@@ -81,8 +81,8 @@ class Booking extends CI_Controller {
     $Movie_model['data'] = $this->Movie_model->ShowSoon();
 		$this->load->view('user/coming', $Movie_model);
 
-	}
-	
+  }
+  	
 	public function showTheaterPlaying(){
 		$ruangan = $this->input->get('ruangan');
 		$Movie_model['data'] = $this->Movie_model->ShowInRoom($ruangan);
