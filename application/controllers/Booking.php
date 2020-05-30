@@ -26,7 +26,7 @@ class Booking extends CI_Controller {
 		$data['menit'] = $this->Movie_model->hoursToMinutes($data['movie']['waktu_film']);
     $data['user'] = $this->User_model->getMyData($this->session->userdata('user_id'));
     $data['umur'] = $this->User_model->hitungUmur($this->session->userdata('user_id'));
-    $this->load->view('user/inBooking', $data);
+    $this->load->view('user/Booking', $data);
 	}
 	
 	public function showPlaying()
