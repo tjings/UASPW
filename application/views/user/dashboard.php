@@ -25,7 +25,8 @@
     </li>
 </header>
 <div class="container">
-    <p style="font-size: 90px; text-align:center;">Hello <?php echo $this->session->userdata("user_nama") ?>, we are TICKS.ID</p>
+    <p style="font-size: 90px; text-align:center;">Hello <?php echo $this->session->userdata("user_nama") ?>,</p>
+    <p style="font-size: 90px; text-align:center;">we are TICKS.ID</p>
     <hr><br>
     <p class="quotes">Cinema is the ultimate pervert art. It doesn't give you what you desire - it tells you how to desire.</p>
 
