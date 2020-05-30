@@ -34,6 +34,9 @@
     </li>
 </header>
     <?php
+		$id = $movie['id_movie'];
+    $ruangan = $movie['id_ruangan'];
+		$harga = $movie['harga_movie'];
     if ($umur < $movie['minimal_usia']) {
       $min = $movie['minimal_usia'];
       echo "Maaf anda terlalu muda! Minimal usia untuk menonton adalah $min. Usia Anda: $umur tahun!";
@@ -70,7 +73,7 @@
         </div>
       </div>
 
-      <form action="<?= site_url() . "/booking/showOrderMovie"; ?>" method="POST">
+			<form action="<?= site_url() . "/booking/showOrderMovie"; ?>" method="POST">
         <input type="hidden" name="id_ruangan" value="<?php echo $this->input->get('ruangan'); ?>">
         <input type="hidden" name="id_movie" value="<?php echo $this->input->get('id'); ?>">
         <input type="hidden" name="harga" value="<?= $harga; ?>">
@@ -81,3 +84,4 @@
     <?php
     }
     ?>
+

@@ -46,7 +46,8 @@
     $lama = $menit;
     $harga = $movie['harga_movie'];
     $ruangan = $movie['id_ruangan'];
-    $trailer = $movie['trailer'];
+		$trailer = $movie['trailer'];
+		$pathToBook = site_url() . "/booking/showPlaying?id=$id&ruangan=$ruangan";
   ?>
 
     <div class="panel-heading">
@@ -78,7 +79,7 @@
           </div>
           <div class="row" style="max-width: 200px; margin-left:20px;">
           <p><a href="<?php echo site_url('') ?>"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;">PLAYING AT</button></a></p>
-          <p><a href="<?php echo site_url('') ?>"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;">BUY TICKET</button></a></p>
+          <p><a href="<?php $pathToBook ?>"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;">BUY TICKET</button></a></p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6">
