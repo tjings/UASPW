@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Now Playing</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/dashboard.css"; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/now.css"; ?>">
     </head>
 <body>
 <header>
@@ -15,6 +15,13 @@
             <li><a href="<?php echo site_url('booking/now') ?>">Now Playing</a></li>
             <li><a href="<?php echo site_url('booking/teater') ?>">Theaters</a></li>
             <li><a href="<?php echo site_url('booking/soon') ?>">Coming Soon</a></li>
+            <li class="sorting">Feature
+                <ul class="sorting-content">
+                    <li><a href="<?php echo site_url('booking/sortByName/ascending')?>">Sort Movie by Ascending</a></li>
+                    <li><a href="<?php echo site_url('booking/sortByName/descending')?>">Sort Movie by Descending</a></li>
+                    <li><a href="<?php echo site_url('booking/filter'); ?>">Filter Movie</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
     <li class="dropdown"><a href="#"><button>Profile</button></a>
@@ -24,16 +31,7 @@
         </ul>
     </li>
 </header>
-    <div class="container" style="padding-top: 100px;">
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sorting
-        </button>
-        <ul class="dropdown-menu">
-            <li><a href="<?php echo site_url('booking/sortByName/descending')?>">Sort Movie (DSC)</a></li>
-            <li><a href="<?php echo site_url('booking/sortByName/ascending')?>">Sort Movie (ASC)</a></li>
-            <li><a href="<?php echo site_url('booking/filter'); ?>">Filter Yang Bisa Kutonton</a></li>
-        </ul>
-    </div>
+<div class="container">
         <div class="row" style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
             <?php foreach ((array) $data as $i) : 
                 $id = $i['id_movie'];
