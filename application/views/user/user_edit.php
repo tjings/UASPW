@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<title> Update Profile </title>
-</head>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/now.css"; ?>">
+    </head>
 <body>
-	<br />
-	<br />
-	<br />
-	<div class="container-fluid">
-		<div style="border-bottom: 1px solid black;">
-			<p style="text-align: center;">
-				<font size="7" color="black"> Update Profile </font>
-				<font size="5" color="rgb(127,127,127)"> Bioskop </font>
-			</p>
-		</div>
-	</div>
+<header>
+    <a href="<?php echo site_url('dashboard')?>">
+        <img class="logo" src="<?= base_url() . "/assets/images/logo.jpg"; ?>" style="border-radius: 25px;" width="40" height="35" alt="logo">
+    </a>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="<?php echo site_url('booking/now') ?>">Now Playing</a></li>
+            <li><a href="<?php echo site_url('booking/teater') ?>">Theaters</a></li>
+            <li><a href="<?php echo site_url('booking/soon') ?>">Coming Soon</a></li>
+        </ul>
+    </nav>
+    <li class="dropdown"><a href="#"><button>Profile</button></a>
+        <ul class="dropdown-content">
+			<li><a href="">History</a></li>
+            <li><a href="<?php echo site_url('booking/EditUser') ?>">Edit Profile</a></li>
+            <li><a href="<?php echo base_url() ?>index.php/dashboard/logout">Log Out</a></li>
+        </ul>
+    </li>
+</header>
+<body>
 	<div class="container" style="margin-top: 35px;">
+
 		<form method='POST' action='<?php echo base_url('index.php/Booking/Edit'); ?>' enctype='multipart/form-data'>
 			<div class='form-group row'>
 				<label class='col-sm-3' for='id_movie'>ID User:</label>
@@ -67,20 +77,6 @@
 		<form method='POST' action="<?php echo base_url(); ?>">
 			<button type='submit' name='cancel' class='btn btn-primary'>Cancel</button>
 		</form>
-
-		<p>History</p>
-		<?php foreach($history as $i) {
-			$id_mov = $i['id_movie'];
-			$nama_mv = $i['nama_movie'];
-			$genre = $i['genre_movie'];
-			$waktu = $i['waktu_film'];
-
-			echo "Movie name: $nama_mv";
-			echo "Genre movie: $genre";
-			echo "Waktu: $waktu";
-			echo "<br><br>";
-		}
-		?>
 	</div>
 	<br />
 	<br />
