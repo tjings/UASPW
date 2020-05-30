@@ -13,7 +13,7 @@
     padding: 0;
     background-color: #114B4C;
     list-style-type: none;
-    background-image: url("../images/aset3.png");
+    /* background-image: url("../images/aset3.png"); */
 }
 
 .container{
@@ -134,7 +134,7 @@ button:hover{
 .box {
   display: inline-block;
   margin: 10px;
-  background-color: green;
+  background-color: #06C6AF;
   color: #fff;
   height: 50px;
   width: 50px;
@@ -149,7 +149,7 @@ button:hover{
 .box-dipilih {
   display: inline-block;
   margin: 10px;
-  background-color: yellow;
+  background-color: #F3FFC0;
   color: #fff;
 }
 

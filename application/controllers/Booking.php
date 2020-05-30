@@ -64,6 +64,7 @@ class Booking extends CI_Controller {
       'id_order' => '',
       'id_user' => $this->session->userdata('user_id'),
       'id_ruangan' => $this->input->post('id_ruangan'),
+      'nama_ruangan' => $nama_ruangan,
       'id_movie' => $this->input->post('id_movie'),
       'id_kursi' => $this->input->post('kursi'),
       'jumlah_tiket' => 1,

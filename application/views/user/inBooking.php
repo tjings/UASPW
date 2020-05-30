@@ -38,7 +38,7 @@
 </header>
     <?php
 		$id = $movie['id_movie'];
-        $ruangan = $movie['id_ruangan'];
+    $ruangan = $movie['id_ruangan'];
 		$harga = $movie['harga_movie'];
     ?>
       <div class="kotak" style="text-align: center; width: 100%;">
@@ -79,7 +79,7 @@
         </div>
         <button type="submit" style="background-color: #06C6AF;">Submit</button>
       </form><br><br>
-        <a href=""><button style="background-color: #06C6AF;">Back</button></a>
+        <a href="previous_url"><button style="background-color: #06C6AF;">Back</button></a>
       </div>
 </body>
 </html>

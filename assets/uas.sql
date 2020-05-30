@@ -239,7 +239,7 @@ CREATE TABLE `ruangan` (
 INSERT INTO `ruangan` (`id_ruangan`, `nama_ruangan`, `lebar_ruangan`, `panjang_ruangan`, `logo`) VALUES
 (1, 'Alpha', 5, 5, '/assets/images/alpha.jpg'),
 (2, 'Beta', 5, 5, '/assets/images/betta.jpg'),
-(3, 'Gamma', 4, 2, '/assets/images/gamma.jpg');
+(3, 'Gamma', 5, 5, '/assets/images/gamma.jpg');
 
 --
 -- Indexes for dumped tables
