@@ -48,18 +48,15 @@
             <div class="card">
                 <div class="card__image-container">
                 <a href="<?=$pathToOrder?>">
-                    <img style="height: 500px; text-align:center;" src="<?= $movie ?>">
+                    <img style="height: 500px;" src="<?= $movie ?>">
                 </a>
                 </div>
                 <div class="card__content">
-                    <p class="card__title text--medium">
-                    <?=$name ?>
-                    </p>
+                    <p class="card__title text--medium"><?=$name ?></p>
                 </div>
             </div>
             <?php endforeach; ?>
-        </section>
-        
+        </section>   
     </main>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
