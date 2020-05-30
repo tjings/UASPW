@@ -35,7 +35,8 @@
             $release = $i['release_date'];
             $lama = $i['waktu_film'];
             $ruangan = $i['id_ruangan'];
-            $pathToOrder = site_url() . "/booking/showBooking?id=$id&ruangan=$ruangan";
+			$pathToOrder = site_url() . "/booking/showBooking?id=$id&ruangan=$ruangan";
+			
             ?>
             <div class="card">
                 <div class="card__image-container">

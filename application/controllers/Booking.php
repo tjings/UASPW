@@ -25,8 +25,12 @@ class Booking extends CI_Controller {
 		$data['ruang'] = $this->Room_model->getSatuRuangan($ruangan);
 		$data['menit'] = $this->Movie_model->hoursToMinutes($data['movie']['waktu_film']);
     $data['user'] = $this->User_model->getMyData($this->session->userdata('user_id'));
-    $data['umur'] = $this->User_model->hitungUmur($this->session->userdata('user_id'));
-    $this->load->view('user/Booking', $data);
+		$data['umur'] = $this->User_model->hitungUmur($this->session->userdata('user_id'));
+		if ($data['movie']['is_released'] == 1) {
+			$this->load->view('user/booking', $data);
+		}else{
+			$this->load->view('user/unreleased', $data);
+		}
 	}
 	
 	public function showPlaying()
