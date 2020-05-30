@@ -14,12 +14,11 @@
         <ul class="nav_links">
             <li><a href="<?php echo site_url('booking/now') ?>">Now Playing</a></li>
             <li><a href="<?php echo site_url('booking/teater') ?>">Theaters</a></li>
-            <li><a href="<?php echo site_url('booking/soon') ?>">Coming Soon</a></li>
+			<li><a href="<?php echo site_url('booking/soon') ?>">Coming Soon</a></li>
         </ul>
     </nav>
     <li class="dropdown"><a href="#"><button>Profile</button></a>
         <ul class="dropdown-content">
-			<li><a href="">History</a></li>
             <li><a href="<?php echo site_url('booking/EditUser') ?>">Edit Profile</a></li>
             <li><a href="<?php echo base_url() ?>index.php/dashboard/logout">Log Out</a></li>
         </ul>

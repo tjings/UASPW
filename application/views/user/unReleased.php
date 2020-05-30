@@ -77,8 +77,8 @@
             <p><a class="btn btn-default btn-outline disabled" style="color: #005350; font-weight: bold;"><?php echo $usia ?></a></p>
           </div>
           <div class="row" style="max-width: 200px; margin-left:20px;">
-          <p><a href="<?php echo site_url('') ?>"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;">PLAYING AT</button></a></p>
-          <p><a href=""><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;" disabled>BUY TICKET</button></a></p>
+          <p><a href="#>"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;" disabled>PLAYING AT</button></a></p>
+          <p><a href="#"><button class="btn icon-btn" style="width: 125%; background-color: #06C6AF; color: white;" disabled>BUY TICKET</button></a></p>
           </div>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-6">
