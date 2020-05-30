@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Now Playing</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/now.css"; ?>">
@@ -31,9 +32,9 @@
         </ul>
     </li>
 </header>
-<div class="container">
-        <div class="row" style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
-            <?php foreach ((array) $data as $i) : 
+    <main>
+        <section class="cards">
+        <?php foreach ((array) $data as $i) : 
                 $id = $i['id_movie'];
                 $name = $i['nama_movie'];
                 $movie = base_url() . $i['poster_movie'];
@@ -44,20 +45,22 @@
                 $ruangan = $i['id_ruangan'];
                 $pathToOrder = site_url() . "/booking/showBooking?id=$id&ruangan=$ruangan";
                 ?>
-            <div class="col-md-4">
-                <div class="card mb-3"style="box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);">
-                    <a href="<?=$pathToOrder?>">
-                        <img style="height: 500px;"src="<?= $movie ?>" class="card-img-top">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title" style="text-align: center"><?=$name ?></h5>
-                        
-                    </div>
+            <div class="card">
+                <div class="card__image-container">
+                <a href="<?=$pathToOrder?>">
+                    <img style="height: 500px; text-align:center;" src="<?= $movie ?>">
+                </a>
+                </div>
+                <div class="card__content">
+                    <p class="card__title text--medium">
+                    <?=$name ?>
+                    </p>
                 </div>
             </div>
             <?php endforeach; ?>
-        </div>
-    </div>
+        </section>
+        
+    </main>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
