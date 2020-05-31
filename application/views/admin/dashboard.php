@@ -17,6 +17,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" style="color: white;">Admin Panel</a>
+          <a class="navbar-brand" href="<?php echo base_url("index.php/MoviePage/AddMovie")?>" style="color: white;">Add Movie</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <div class="navbar-form navbar-right">
@@ -24,12 +25,6 @@
             </div>
       </div>
     </nav>
-<a href="<?php echo base_url("index.php/MoviePage/AddMovie")?>" style="float:right;margin-right: 15px;">
-		<button class="btn btn-primary"> 
-			<span class="glyphicon glyphicon-plus"></span>
-			Movie
-		</button>
-	</a>
 	<br/>
 	<br/>
 	<br/>
