@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password"><i class="zmdi zmdi-lock"></i></label>
-                    <input type="password" name="password" id="password" placeholder="Password"/>
+                    <input type="password" name="password" id="password" required placeholder="Password"/>
 				</div>
 				<div class="form-group">
                     <label for="nama_user"><i class="zmdi zmdi-account material-icons-name"></i></label>

@@ -120,7 +120,7 @@ class Booking extends CI_Controller {
 	}
 
 	public function Edit(){
-
+		$this->form_validation->set_rules('password', 'password', 'required');
 		$config['upload_path'] = "./assets/user/";
 		$config['allowed_types'] = "gif|jpg|png";
 		$config['max_size'] = "100000";
