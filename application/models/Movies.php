@@ -109,7 +109,8 @@
 		{
 			$values = array(
 				'id_kursi' => $id_kursi,
-				'id_ruangan' => $id_ruangan
+				'id_ruangan' => $id_ruangan,
+				'is_booked' => 0
 			);
 			
 			$this->db->trans_begin();
