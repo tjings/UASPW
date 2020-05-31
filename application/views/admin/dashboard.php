@@ -18,7 +18,8 @@
           </button>
           <a class="navbar-brand" style="color: white;">Admin Panel</a>
           <a class="navbar-brand" href="<?php echo base_url("index.php/MoviePage/AddMovie")?>" style="color: white;">Add Movie</a>
-        </div>
+          <a class="navbar-brand" href="<?php echo base_url("index.php/MoviePage/AddRoom")?>" style="color: white;">Add Room</a>
+       </div>
         <div id="navbar" class="navbar-collapse collapse">
             <div class="navbar-form navbar-right">
                 <a href="<?php echo site_url() . "/dashboard/logout" ?>" type="submit" class="btn btn-success"><i class="fa fa-sign-out"></i> Logout</a>
