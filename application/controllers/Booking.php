@@ -121,15 +121,15 @@ class Booking extends CI_Controller {
 
 	public function Edit(){
 
-		$config['upload_path'] = "./assets/posters/";
+		$config['upload_path'] = "./assets/user/";
 		$config['allowed_types'] = "gif|jpg|png";
 		$config['max_size'] = "100000";
 		$this->load->library('upload',$config);
 		
 		$stat = $this->upload->do_upload('profpict');
-		$pict = '/assets/posters/'.$_FILES['profpict']['name'];
+		$pict = '/assets/user/'.$_FILES['profpict']['name'];
 
-		if($pict == '/assets/posters/'){
+		if($pict == '/assets/user/'){
 			echo $stat;
       $user_id = $this->input->post('id_user');
 			$username = $this->input->post('username');
@@ -146,13 +146,12 @@ class Booking extends CI_Controller {
 
 			echo $pict;
       $user_id = $this->input->post('id_user');
-			
 			$username = $this->input->post('username');
-      $password = $this->input->post('password');
+      $password = md5($this->input->post('password'));
       $nama_user = $this->input->post('nama_user');
 			$tanggal_lahir = $this->input->post('tanggal_lahir');
 			$role = $this->input->post('role');
-			$pict = $this->input->post('pict');
+			// $pict = $this->input->post('test');
 
       $this-> User_model -> UpdateData($user_id,$username,$password,$nama_user,$tanggal_lahir,$role, $pict);
 			redirect('Booking','refresh');
