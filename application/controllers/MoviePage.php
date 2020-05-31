@@ -142,15 +142,15 @@ class MoviePage extends CI_Controller {
 
 	public function room_add()
 	{
-		$this->form_validation->set_rules('id_kursi','JUMLAH KURSI','required');
+		$this->form_validation->set_rules('index_kursi','JUMLAH KURSI','required');
 		$this->form_validation->set_rules('id_ruangan','NO RUANGAN','required');
 		
 		if($this->form_validation->run() != FALSE){
 	
-			$id_kursi = $this->input->post('id_kursi');
+			$index_kursi = $this->input->post('index_kursi');
 			$id_ruangan = $this->input->post('id_ruangan');
 
-			$this->Movies->AddRuangan($id_kursi, $id_ruangan);
+			$this->Movies->AddRuangan($index_kursi, $id_ruangan);
 			redirect('MoviePage', 'refresh');
 		}
 		else{

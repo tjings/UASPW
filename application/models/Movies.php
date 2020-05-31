@@ -105,10 +105,11 @@
 			}
 		}
 
-		public function AddRuangan($id_kursi,$id_ruangan)
+		public function AddRuangan($index_kursi, $id_ruangan)
 		{
 			$values = array(
-				'id_kursi' => $id_kursi,
+				'id_kursi' => NULL,
+				'index_kursi' =>$index_kursi,
 				'id_ruangan' => $id_ruangan,
 				'is_booked' => 0
 			);

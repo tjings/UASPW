@@ -15,7 +15,7 @@
         <h1 style="text-align: center;">Add Room</h1>
 		<div class="form-group">
             <label>Jumlah Kursi :</label>
-            <input type="number" name="id_kursi" id="id_kursi">
+            <input type="number" name="index_kursi" id="index_kursi">
         </div>
 
         <div class="form-group">
