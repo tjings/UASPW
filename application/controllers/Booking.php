@@ -126,15 +126,14 @@ class Booking extends CI_Controller {
 		$config['max_size'] = "100000";
 		$this->load->library('upload',$config);
 		
-		$stat = $this->upload->do_upload('posternew');
-		$pict = '/assets/posters/'.$_FILES['posternew']['name'];
+		$stat = $this->upload->do_upload('profpict');
+		$pict = '/assets/posters/'.$_FILES['profpict']['name'];
 
-		if($poster_movie == '/assets/posters/'){
+		if($pict == '/assets/posters/'){
 			echo $stat;
       $user_id = $this->input->post('id_user');
-			
 			$username = $this->input->post('username');
-      $password = $this->input->post('password');
+      $password = md5($this->input->post('password'));
       $nama_user = $this->input->post('nama_user');
 			$tanggal_lahir = $this->input->post('tanggal_lahir');
 			$role = $this->input->post('role');

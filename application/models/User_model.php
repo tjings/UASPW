@@ -44,11 +44,10 @@ class User_model extends CI_Model
     return $this->db->get()->row()->umur;
   }
 
-  public function UpdateData($user_id,$username,$password,$nama_user,$tanggal_lahir,$role, $pict)
+  public function UpdateData($id_user,$username,$password,$nama_user,$tanggal_lahir,$role, $pict)
 		{
 			$values = array(
-                'id_user' => $user_id,
-				        
+                'id_user' => $id_user,
                 'username' => $username,
                 'password' => $password,
                 'nama_user' => $nama_user,
@@ -59,8 +58,8 @@ class User_model extends CI_Model
 			);
 			
 			$this->db->trans_begin();
-
-			$this->db->Replace('login',$values);
+			$this->db->where('id_user', $id_user);
+			$this->db->update('login',$values);
 
 			$this->db->trans_complete();
 

@@ -33,7 +33,11 @@
 		<h2 class="form-title" style="padding-top: 40px;">Edit Profile</h2>
 		<img src="<?php echo base_url() . $param['pict']; ?>" class="img-fluid" width="auto" height="500">
             <form method="POST" action="<?php echo base_url('index.php/Booking/Edit'); ?>" enctype='multipart/form-data' >
-                <div class="form-group">
+				<div class="form-group" hidden>
+                    <label for="id_user"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                    <input type="text" name="id_user" placeholder="Your Username" value='<?php echo $param["id_user"]; ?>'/>
+                </div>
+				<div class="form-group">
                     <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
                     <input type="text" name="username" id="username" placeholder="Your Username" value='<?php echo $param["username"]; ?>'/>
                 </div>
@@ -50,12 +54,12 @@
                     <input type="date" name="tanggal_lahir" id="tanggal_lahir" placeholder="Your Username" value='<?php echo $param["tanggal_lahir"]; ?>'/>
 				</div>
 				<div class="form-group">
-                    <label for="poster_movie"><i class="zmdi zmdi-image"></i></label>
+                    <label for="pict"><i class="zmdi zmdi-image"></i></label>
                     <div class="file-field">
 						<div class="d-flex justify-content-center">
 							<div class="btn btn-mdb-color btn-rounded float-left">
 								<span></span>
-								<input type="file" name='pict' class='form-control'>
+								<input type="file" name='profpict' class='form-control'>
 							</div>
 						</div>
 					</div>
