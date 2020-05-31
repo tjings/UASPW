@@ -17,13 +17,18 @@
             <li><a href="<?php echo site_url('booking/soon') ?>">Coming Soon</a></li>
         </ul>
     </nav>
-    <li class="dropdown"><a href="#"><button>Profile</button></a>
+    <li class="dropdown"><a href="<?php echo site_url('booking/ShowProfile') ?>"><button>Profile</button></a>
         <ul class="dropdown-content">
             <li><a href="<?php echo site_url('booking/EditUser') ?>">Edit Profile</a></li>
             <li><a href="<?php echo base_url() ?>index.php/dashboard/logout">Log Out</a></li>
         </ul>
     </li>
 </header>
+<?php
+$id = $movie['id_movie'];
+$ruangan = $movie['id_ruangan'];
+$pathToBook = site_url() . "/booking/showPlaying?id=$id&ruangan=$ruangan";
+?>
 <div class="container-booking" style="text-align: center; width: 100%;">
   <form action="<?= site_url() . "/booking/orderMovie"; ?>" method="POST" style="margin-left: 35%;">
 
@@ -49,7 +54,7 @@
             <tr>
                 <td style="padding: 20px; text-align: right; border-bottom: 1px solid #ddd;">Theater</td>
                 <td style="padding: 20px; text-align: left; border-bottom: 1px solid #ddd;">
-                
+                <?= $nama_teater; ?>
                 </td>
             </tr>
             <tr>
@@ -67,7 +72,7 @@
     <button type="submit" style="background-color: #06C6AF; margin-right:54%;">Submit</button><br><br><br><br>
   </form>
   
-  <a href="previous_url"><button style="background-color: #06C6AF;">Back</button></a>
+  <a href="<?=$pathToBook?>"><button style="background-color: #06C6AF;">Back</button></a>
   </div>
 </body>
 </html>

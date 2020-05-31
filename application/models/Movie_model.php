@@ -52,7 +52,7 @@ class Movie_model extends CI_Model
         list($hours, $minutes) = explode(':', $hours); 
     } 
     return $hours * 60 + $minutes; 
-} 
+	} 
 
   public function buyTicket($data)
   {
@@ -89,5 +89,18 @@ class Movie_model extends CI_Model
     $this->db->from('movies');
     $this->db->where('minimal_usia <', $usia);
     return $this->db->get()->result_array();
-  }
+	}
+	
+	public function namaRuangan($id_ruangan)
+  {
+		if($id_ruangan=='1'){
+			$nama_ruangan = 'Alpha';
+		}else if ($id_ruangan=='2'){
+			$nama_ruangan = 'Beta';
+		}else if ($id_ruangan=='3'){
+			$nama_ruangan = 'Gamma';
+		}
+		return $nama_ruangan;
+	} 
+	
 }

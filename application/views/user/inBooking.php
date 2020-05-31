@@ -29,7 +29,7 @@
             <li><a href="<?php echo site_url('booking/soon') ?>">Coming Soon</a></li>
         </ul>
     </nav>
-    <li class="dropdown"><a href="#"><button>Profile</button></a>
+    <li class="dropdown"><a href="<?php echo site_url('booking/ShowProfile') ?>"><button>Profile</button></a>
         <ul class="dropdown-content">
             <li><a href="<?php echo site_url('booking/EditUser') ?>">Edit Profile</a></li>
             <li><a href="<?php echo base_url() ?>index.php/dashboard/logout">Log Out</a></li>
@@ -40,6 +40,7 @@
 		$id = $movie['id_movie'];
     $ruangan = $movie['id_ruangan'];
 		$harga = $movie['harga_movie'];
+		$pathToOrder = site_url() . "/booking/showBooking?id=$id&ruangan=$ruangan";
     ?>
       <div class="kotak" style="text-align: center; width: 100%;">
         <div class="satu-renteng">
@@ -47,7 +48,6 @@
           $counter = 0;
           foreach ($kursi as $i) {
             $id_kursi = $i['id_kursi'];
-
             if ($counter == $ruang['panjang_ruangan']) {
               $counter = 0;
               echo "<br>";
@@ -79,7 +79,7 @@
         </div>
         <button type="submit" style="background-color: #06C6AF;">Submit</button>
       </form><br><br>
-        <a href="previous_url"><button style="background-color: #06C6AF;">Back</button></a>
+        <a href="<?=$pathToOrder?>"><button style="background-color: #06C6AF;">Back</button></a>
       </div>
 </body>
 </html>

@@ -35,7 +35,7 @@
         <input type="text" name="search" placeholder="Search...">
         <button type="submit"style="background-color: transparent; min-width:0px; margin-left:90%;"><i class="zmdi zmdi-search" style="color: white;"></i></button>
     </form>
-    <li class="dropdown"><a href="#"><button>Profile</button></a>
+    <li class="dropdown"><a href="<?php echo site_url('booking/ShowProfile') ?>"><button>Profile</button></a>
         <ul class="dropdown-content">
             <li><a href="<?php echo site_url('booking/EditUser') ?>">Edit Profile</a></li>
             <li><a href="<?php echo base_url() ?>index.php/dashboard/logout">Log Out</a></li>

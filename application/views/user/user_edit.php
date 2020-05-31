@@ -17,7 +17,7 @@
 			<li><a href="<?php echo site_url('booking/soon') ?>">Coming Soon</a></li>
         </ul>
     </nav>
-    <li class="dropdown"><a href="#"><button>Profile</button></a>
+    <li class="dropdown"><a href="<?php echo site_url('booking/ShowProfile') ?>"><button>Profile</button></a>
         <ul class="dropdown-content">
             <li><a href="<?php echo site_url('booking/EditUser') ?>">Edit Profile</a></li>
             <li><a href="<?php echo base_url() ?>index.php/dashboard/logout">Log Out</a></li>

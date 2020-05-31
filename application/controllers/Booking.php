@@ -52,7 +52,7 @@ class Booking extends CI_Controller {
     $fake = $this->input->post('id_movie');
     $data['id_kursi'] = $this->input->post('kursi');
     $data['movie'] = $this->Movie_model->get_movie($fake);
-
+		$data['nama_teater'] = $this->Movie_model->namaRuangan($data['id_ruangan']);
     $this->load->view('user/konfirmasiBooking', $data);
   }
 
@@ -104,6 +104,20 @@ class Booking extends CI_Controller {
     $data['param'] = $this->User_model->getMyData($this->session->userdata('user_id'));
     $data['history'] = $this->User_model->getHistory($this->session->userdata('user_id'));
 		$this->load->view('user/user_edit',$data);
+	}
+
+	public function ShowProfile(){
+    $data['script'] = $this->load->view('include/script',NULL,TRUE);
+    $data['param'] = $this->User_model->getMyData($this->session->userdata('user_id'));
+    $data['history'] = $this->User_model->getHistory($this->session->userdata('user_id'));
+		$this->load->view('user/profile',$data);
+	}
+
+	public function ShowHistory(){
+    $data['script'] = $this->load->view('include/script',NULL,TRUE);
+    $data['param'] = $this->User_model->getMyData($this->session->userdata('user_id'));
+    $data['history'] = $this->User_model->getHistory($this->session->userdata('user_id'));
+		$this->load->view('user/history',$data);
 	}
 
 	public function Edit(){
