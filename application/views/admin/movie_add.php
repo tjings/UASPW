@@ -63,7 +63,7 @@
         </div>
 
 		<input type="submit" name="submit" class="btn btn-primary btn-sm" value="Tambah Film">
-        <a class="button" href="dashboard.php">cancel</button>
+        <a class="button" href="index">cancel</button>
 		<?php echo form_close(); ?>
 	</div>
 </body>

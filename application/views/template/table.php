@@ -8,7 +8,6 @@
         <th>Release Date</th>
         <th>Lama Film</th>
 		<th>Ruangan</th>
-		<th>Poster</th>
 		<th>Harga</th>
         <th>Aksi</th>
 		</tr>
@@ -21,7 +20,6 @@
 
 				$detail = $base_url."index.php/MoviePage/ShowDetail";
 				$id = $row['id_movie'];
-				$path_del = site_url() . "/MoviePage/deleteMovie/$id";
 
 				echo "<tr>";
 					echo "<td>" .$row['id_movie'] ."</td>";
@@ -31,7 +29,6 @@
                     echo "<td>" .$row['release_date'] ."</td>";
                     echo "<td>" .$row['waktu_film'] . ' jam'."</td>";
                     echo "<td>" .$row['id_ruangan'] ."</td>";
-                    echo "<td>" .$row['poster_movie'] ."</td>";
                     echo "<td>" .$row['harga_movie'] ."</td>";
 					echo "<td>";
 						echo "<a href='".base_url("index.php/MoviePage/ShowDetail?id=$id")."'
@@ -46,7 +43,12 @@
 								echo "<span class='glyphicon glyphicon-edit'></span>";
 							echo "</button>";
 						echo "</a>";
-						echo "<a href=$path_del>Delete</a>";
+						echo "<a href='".base_url("index.php/MoviePage/deleteMovie/$id")."'
+								style='margin-right:10px;color:rgb(255,51,0);'>";
+							echo "<button class='btn'>";
+								echo "<span class='glyphicon glyphicon-remove'></span>";
+							echo "</button>";
+						echo "</a>";
 					echo "</td>";
 				echo "</tr>";
 			}
@@ -60,6 +62,7 @@
     <td>Release Date</td>
     <td>Lama Film</td>
     <td>Ruangan</td>
+	<td>Harga</td>
     <td>Aksi</td>
 	</tfoot>
 </table>
