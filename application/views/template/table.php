@@ -11,15 +11,15 @@
 <table id="tblMovie" class="table table-striped table-bordered" cellspacing="0" width="100%">
 	<thead>
 		<tr>
-        <th>No.</th>
+        <th style="width: 50px;">No.</th>
         <th>Nama</th>
         <th>Genre</th> 
-        <th>Minimal Usia</th>
-        <th>Release Date</th>
-        <th>Lama Film</th>
-		<th>Ruangan</th>
-		<th>Harga</th>
-        <th>Aksi</th>
+        <th style="width: 80px;">Minimal Usia</th>
+        <th style="width: 100px;">Release Date</th>
+        <th style="width: 100px;">Lama Film</th>
+		<th style="width: 80px;">Ruangan</th>
+		<th style="width: 80px;">Harga</th>
+        <th style="width: 170px;">Aksi</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -64,17 +64,6 @@
 			}
 		?>
 	</tbody>
-	<tfoot>
-    <td>No.</td>
-    <td>Nama</td>
-    <td>Genre</td>
-    <td>Minimal Usia</td>
-    <td>Release Date</td>
-    <td>Lama Film</td>
-    <td>Ruangan</td>
-	<td>Harga</td>
-    <td>Aksi</td>
-	</tfoot>
 </table>
 </div>
 </body>
