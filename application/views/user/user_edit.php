@@ -2,11 +2,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Edit Profile</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/now.css"; ?>">
+	<title>Edit Profile</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="path/to/material-design-iconic-font/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/profile.css"; ?>">
+	<link rel="stylesheet" href="<?php echo base_url() . "assets/css/style.css" ?>">
     </head>
 <body>
-<header>
+<header style="background-color: #114B4C;">
     <a href="<?php echo site_url('dashboard')?>">
         <img class="logo" src="<?= base_url() . "/assets/images/logo.jpg"; ?>" style="border-radius: 25px;" width="40" height="35" alt="logo">
     </a>
@@ -25,40 +28,30 @@
     </li>
 </header>
 <body>
-	<div class="container" style="margin-top: 35px;">
-
-		<form method='POST' action='<?php echo base_url('index.php/Booking/Edit'); ?>' enctype='multipart/form-data'>
-			<div class='form-group row'>
-				<label class='col-sm-3' for='id_movie'>ID User:</label>
-				<input class='form-control' type='hidden' name='movieid' value='<?php echo $param['id_user']; ?>'>
-				<div class='col-sm-6'><input class='form-control' type='text' name='title' value='<?php echo $param["id_user"]; ?>' disabled></div>
-			</div>
-			<div class='form-group row'>
-				<label class='col-sm-3' for='username'>Username : </label>
-				<div class='col-sm-6'><input class='form-control' type='text' name='username' value='<?php echo $param["username"]; ?>'></div>
-			</div>
-			<div class='form-group row'>
-				<label class='col-sm-3' for='password'>Password:</label>
-				<div class='col-sm-6'><input class='form-control' type='text' name='password'> </div>
-			</div>
-			<div class='form-group row'>
-				<label class='col-sm-3' for='nama_user'>Nama User :</label>
-				<div class='col-sm-6'><input class='form-control' type='text' name='nama_user' value='<?php echo $param["nama_user"]; ?>'></div>
-			</div>
-			<div class='form-group row'>
-				<label class='col-sm-3' for='tanggal_lahir'>Tanggal lahir:</label>
-				<div class='col-sm-6'><input class='form-control' type='date' name='tanggal_lahir' value='<?php echo $param["tanggal_lahir"]; ?>'></div>
-			</div>
-			<div class='form-group row'>
-				<label class='col-sm-3' for='role'>Role:</label>
-				<div class='col-sm-6'><input class='form-control' type='text' name='role' value='<?php echo $param["role"]; ?>'></div>
-			</div>
-
-			<div class='form-group row'>
-				<label class='col-sm-3' for='poster_movie'>Picture Profile:</label>
-				<div class='col-sm-6'>
-					<div class="file-field">
-						<img src="<?php echo base_url() . $param['pict']; ?>" class="img-fluid" width="auto" height="500">
+<div class="container" style="margin-top: 35px;">
+	<div class="kotak" style="text-align: center; margin:80px;" >
+		<h2 class="form-title" style="padding-top: 40px;">Edit Profile</h2>
+		<img src="<?php echo base_url() . $param['pict']; ?>" class="img-fluid" width="auto" height="500">
+            <form method="POST" action="<?php echo base_url('index.php/Booking/Edit'); ?>" enctype='multipart/form-data' >
+                <div class="form-group">
+                    <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                    <input type="text" name="username" id="username" placeholder="Your Username" value='<?php echo $param["username"]; ?>'/>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                    <input type="password" name="password" id="password" placeholder="Password"/>
+				</div>
+				<div class="form-group">
+                    <label for="nama_user"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                    <input type="text" name="nama_user" id="nama_user" placeholder="Name" value='<?php echo $param["nama_user"]; ?>'/>
+				</div>
+				<div class="form-group">
+                    <label for="tanggal_lahir"><i class="zmdi zmdi-calendar"></i></label>
+                    <input type="date" name="tanggal_lahir" id="tanggal_lahir" placeholder="Your Username" value='<?php echo $param["tanggal_lahir"]; ?>'/>
+				</div>
+				<div class="form-group">
+                    <label for="poster_movie"><i class="zmdi zmdi-image"></i></label>
+                    <div class="file-field">
 						<div class="d-flex justify-content-center">
 							<div class="btn btn-mdb-color btn-rounded float-left">
 								<span></span>
@@ -67,18 +60,21 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<input class='form-control' type='hidden' name='pict' value='<?php echo $param['pict']; ?>'>
-			<button type='submit' name='submit' class='btn btn-primary'>Update User</button>
-		</form>
-
-		<form method='POST' action="<?php echo base_url(); ?>">
-			<button type='submit' name='cancel' class='btn btn-primary'>Cancel</button>
-		</form>
+				<div class='form-group'>
+					<label for='role'>Role:</label>
+					<input type='hidden' name='role' value='<?php echo $param["role"]; ?>'></div>
+				</div>
+                <div class="form-group form-button" style="text-align: center;">
+					<input class='form-control' type='hidden' name='pict' value='<?php echo $param['pict']; ?>'>
+					<button type='submit' name='submit'>Update User</button><br>
+					
+					<form method='POST' action="<?php echo base_url(); ?>"><br>
+						<button type='submit' name='cancel'>Cancel</button><br><br><br>
+					</form>
+				</div>
+			</form>
+		</div>
 	</div>
-	<br />
-	<br />
 </body>
 
 </html>
