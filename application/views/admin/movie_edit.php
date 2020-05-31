@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Update Film </title>
+    <title> Update Film </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="<?php echo base_url() . "assets/css/form.css" ?>">
 </head>
 <body>
-	<br/>
-	<br/>
-	<br/>
-	<div class="container-fluid">
-			<div style="border-bottom: 1px solid black;">
-				<p style="text-align: center;"> 
-					<font size="7" color="black"> Update Film </font>
-					<font size="5" color="rgb(127,127,127)"> Bioskop </font> 
-				</p>
-			</div>
-	</div>
-	<div class="container" style="margin-top: 35px;">
+    <div class="container-fluid">
+    <div class="form-style-8" style="margin-top: 35px; width:45%; margin-left:28%;">
 		<?php 
 			if(isset($param)){ 
 				foreach($param as $row){
@@ -75,6 +69,7 @@
                 <button type='submit' name='cancel' class='btn btn-default'>Cancel</button>
         </form>
 	</div>
+</div>
 	<br/>
 	<br/>
     <?php }}?>

@@ -104,6 +104,29 @@
 				
 			}
 		}
+
+		public function AddRuangan($id_kursi,$id_ruangan)
+		{
+			$values = array(
+				'id_kursi' => $id_kursi,
+				'id_ruangan' => $id_ruangan
+			);
+			
+			$this->db->trans_begin();
+
+			$this->db->insert('kursi', $values);
+
+			$this->db->trans_complete();
+
+			if($this->db->trans_status() === FALSE)
+			{
+				$this->db->trans_rollback();
+				return FALSE;
+			}else
+			{
+				//Type your code here ...
+			}
+		}
 	}
 
 ?>

@@ -105,7 +105,7 @@ class MoviePage extends CI_Controller {
 			$poster_movie = $this->input->post('poster_movie');
 			$harga_movie = $this->input->post('harga_movie');
 
-			$this-> Movies -> UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie, $this->input->post('poster_movie'));
+			$this-> Movies -> UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie, $this->input->post('poster'));
 			redirect('MoviePage','refresh');
 
 		}else{
@@ -119,7 +119,7 @@ class MoviePage extends CI_Controller {
 			$minimal_usia = $this->input->post('minimal_usia');
 			$release_date = $this->input->post('release_date');
 			$waktu_film = $this->input->post('waktu_film');
-			// $poster_movie = $this->input->post('poster');
+			$poster_movie = $this->input->post('poster');
 			$harga_movie = $this->input->post('harga_movie');
 
 			$this-> Movies -> UpdateData($id_movie,$nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie);
@@ -134,6 +134,30 @@ class MoviePage extends CI_Controller {
     $this->Movies->deleteMovie($id);
     redirect('MoviePage');
   }
+
+  public function AddRoom(){
+		$data['script'] = $this->load->view('include/script',NULL,TRUE);
+		$this->load->view('admin/room_add',$data);
+	}
+
+	public function room_add()
+	{
+		$this->form_validation->set_rules('id_kursi','JUMLAH KURSI','required');
+		$this->form_validation->set_rules('id_ruangan','NO RUANGAN','required');
+		
+		if($this->form_validation->run() != FALSE){
+	
+			$id_kursi = $this->input->post('id_kursi');
+			$id_ruangan = $this->input->post('id_ruangan');
+
+			$this->Movies->AddRuangan($id_kursi, $id_ruangan);
+			redirect('MoviePage', 'refresh');
+		}
+		else{
+			$data['script'] = $this->load->view('include/script',NULL,TRUE);
+			$this->load->view('admin/room_add', $data);
+		}
+	}
 }
 
 ?>
