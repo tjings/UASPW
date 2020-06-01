@@ -7,7 +7,9 @@
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
-
+DROP DATABASE IF EXISTS uas;
+CREATE DATABASE IF NOT EXISTS uas;
+USE uas;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;

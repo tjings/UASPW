@@ -7,6 +7,7 @@ class MoviePage extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Movies');
+		$this->load->model('Room_model');
 		$this->load->library('form_validation');
 
 		if($this->session->userdata('role') != 'admin') {
@@ -132,29 +133,40 @@ class MoviePage extends CI_Controller {
 		}
 	}
 
-  public function deleteMovie()
-  {
-    $id = $this->uri->segment(3);
-    $this->Movies->deleteMovie($id);
-    redirect('MoviePage');
-  }
+	public function deleteMovie()
+	{
+		$id = $this->uri->segment(3);
+		$this->Movies->deleteMovie($id);
+		redirect('MoviePage');
+	}
 
-  public function AddRoom(){
-		$data['script'] = $this->load->view('include/script',NULL,TRUE);
-		$this->load->view('admin/room_add',$data);
+	public function AddRoom(){
+			$data['script'] = $this->load->view('include/script',NULL,TRUE);
+			$this->load->view('admin/room_add',$data);
 	}
 
 	public function room_add()
 	{
-		$this->form_validation->set_rules('index_kursi','JUMLAH KURSI','required');
-		$this->form_validation->set_rules('id_ruangan','NO RUANGAN','required');
+		$this->form_validation->set_rules('nama_ruangan','NAMA RUANGAN','required');
+		$this->form_validation->set_rules('panjang_ruangan','PANJANG RUANGAN','required');
+		$this->form_validation->set_rules('lebar_ruangan','LEBAR RUANGAN','required');
 		
 		if($this->form_validation->run() != FALSE){
-	
-			$index_kursi = $this->input->post('index_kursi');
-			$id_ruangan = $this->input->post('id_ruangan');
+			$config['upload_path'] = "./assets/image/";
+			$config['allowed_types'] = "gif|jpg|png";
+			$config['encrypt_name'] = TRUE;
+			$this->load->library('upload',$config);
+			
+			$stat = $this->upload->do_upload('logo');
+			$data = $this->upload->data();
+			$logo = '/assets/image/' . $data['file_name'];
 
-			$this->Movies->AddRuangan($index_kursi, $id_ruangan);
+			$nama_ruangan = $this->input->post('nama_ruangan');
+			$panjang_ruangan = $this->input->post('panjang_ruangan');
+			$lebar_ruangan = $this->input->post('lebar_ruangan');
+			$logo = $logo;
+
+			$this->Room_model->AddRuangan($nama_ruangan, $panjang_ruangan, $lebar_ruangan, $logo);
 			redirect('MoviePage', 'refresh');
 		}
 		else{

@@ -107,30 +107,6 @@
 			}
 		}
 
-		public function AddRuangan($index_kursi, $id_ruangan)
-		{
-			$values = array(
-				'id_kursi' => NULL,
-				'index_kursi' =>$index_kursi,
-				'id_ruangan' => $id_ruangan,
-				'is_booked' => 0
-			);
-			
-			$this->db->trans_begin();
-
-			$this->db->insert('kursi', $values);
-
-			$this->db->trans_complete();
-
-			if($this->db->trans_status() === FALSE)
-			{
-				$this->db->trans_rollback();
-				return FALSE;
-			}else
-			{
-				//Type your code here ...
-			}
-		}
 	}
 
 ?>

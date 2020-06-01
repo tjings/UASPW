@@ -24,5 +24,29 @@ class Room_model extends CI_Model
 		return $query->result_array();
 	}
 	
+	public function AddRuangan($nama_ruangan, $panjang_ruangan, $lebar_ruangan, $logo)
+	{
+		$values = array(
+			'id_ruangan' => NULL,
+			'nama_ruangan' =>$nama_ruangan,
+			'panjang_ruangan' => $panjang_ruangan,
+			'lebar_ruangan' => $lebar_ruangan,
+			'logo' => $logo
+		);
+		
+		$this->db->trans_begin();
 
+		$this->db->insert('ruangan', $values);
+
+		$this->db->trans_complete();
+
+		if($this->db->trans_status() === FALSE)
+		{
+			$this->db->trans_rollback();
+			return FALSE;
+		}else
+		{
+			//Type your code here ...
+		}
+	}
 }
