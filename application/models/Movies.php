@@ -37,10 +37,10 @@
 			}
 		}
 
-		public function AddData($nama_movie,$genre_movie,$sinopsis,$minimal_usia,$release_date,$waktu_film,$poster_movie,$harga_movie,$id_ruangan)
+		public function AddData($nama_movie, $genre_movie, $sinopsis, $minimal_usia, $release_date, $waktu_film, $poster_movie, $harga_movie,$is_released, $trailer, $id_ruangan)
 		{
 			$values = array(
-								'id_movie' => '',
+				'id_movie' => NULL,
                 'nama_movie' => $nama_movie,
                 'genre_movie' => $genre_movie,
                 'sinopsis' => $sinopsis,
@@ -49,6 +49,8 @@
                 'waktu_film' => $waktu_film,
                 'poster_movie' => $poster_movie,
 				'harga_movie' => $harga_movie,
+				'is_released' => $is_released,
+				'trailer' => $trailer,
 				'id_ruangan' => $id_ruangan
 			);
 			
@@ -78,7 +80,7 @@
 		{
 			$values = array(
                 'id_movie' => $id_movie,
-								'nama_movie' => $nama_movie,
+				'nama_movie' => $nama_movie,
                 'genre_movie' => $genre_movie,
                 'sinopsis' => $sinopsis,
                 'minimal_usia' => $minimal_usia,

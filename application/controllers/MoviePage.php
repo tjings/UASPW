@@ -39,8 +39,10 @@ class MoviePage extends CI_Controller {
 		$this->form_validation->set_rules('sinopsis','SINOPSIS','required|max_length[100]');
 		$this->form_validation->set_rules('minimal_usia','MINIMAL USIA','required|numeric');
 		$this->form_validation->set_rules('release_date','RELEASE DATE','required');
-		$this->form_validation->set_rules('waktu_film','WAKTU FILM','required|numeric');
+		$this->form_validation->set_rules('waktu_film','WAKTU FILM','required');
 		$this->form_validation->set_rules('harga_movie','HARGA MOVIE','required');
+		$this->form_validation->set_rules('is_released','RELEASED','required');
+		$this->form_validation->set_rules('trailer','TRAILER', 'required');
 		$this->form_validation->set_rules('id_ruangan','RUANGAN','required');
 
 		if($this->form_validation->run() != FALSE){
@@ -61,9 +63,11 @@ class MoviePage extends CI_Controller {
 			$waktu_film = $this->input->post('waktu_film');
 			$poster_movie = $poster_movie;
 			$harga_movie = $this->input->post('harga_movie');
+			$is_released = $this->input->post('is_released');
+			$trailer = $this->input->post('trailer');
 			$id_ruangan = $this->input->post('id_ruangan');
 
-			$this->Movies->AddData($nama_movie, $genre_movie, $sinopsis, $minimal_usia, $release_date, $waktu_film, $poster_movie, $harga_movie,$id_ruangan);
+			$this->Movies->AddData($nama_movie, $genre_movie, $sinopsis, $minimal_usia, $release_date, $waktu_film, $poster_movie, $harga_movie,$is_released, $trailer, $id_ruangan);
 			redirect('MoviePage', 'refresh');
 		}
 		else{

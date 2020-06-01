@@ -48,6 +48,7 @@
           $counter = 0;
           foreach ($kursi as $i) {
             $id_kursi = $i['id_kursi'];
+            $index_kursi = $i['index_kursi'];
             if ($counter == $ruang['panjang_ruangan']) {
               $counter = 0;
               echo "<br>";
@@ -61,7 +62,7 @@
             } else {
               echo
                 "<div class='box' onClick='ubahWarna(this)' data-value=$id_kursi>
-                    <p>$id_kursi</p>
+                    <p>$index_kursi</p>
                   </div>";
             }
             $counter++;

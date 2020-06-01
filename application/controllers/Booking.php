@@ -61,7 +61,7 @@ class Booking extends CI_Controller {
     $harga_movie = $this->input->post('harga');
 
     $data = [
-      'id_order' => '',
+      'id_order' => NULL,
       'id_user' => $this->session->userdata('user_id'),
       'id_ruangan' => $this->input->post('id_ruangan'),
       'id_movie' => $this->input->post('id_movie'),

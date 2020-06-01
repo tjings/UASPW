@@ -71,12 +71,13 @@
                 <div class="form-group form-button" style="text-align: center;">
 					<input class='form-control' type='hidden' name='pict' value='<?php echo $param['pict']; ?>'>
 					<button type='submit' name='submit'>Update User</button><br>
-					
-					<form method='POST' action="<?php echo base_url(); ?>"><br>
-						<button type='submit' name='cancel'>Cancel</button><br><br><br>
-					</form>
 				</div>
 			</form>
+    			<div class="form-button" style="text-align: center;">
+    			    <form method='POST' action="<?php echo base_url(); ?>"><br>
+    						<button type='submit' name='cancel'>Cancel</button><br><br><br>
+    				</form>
+    			</div>
 		</div>
 	</div>
 </body>

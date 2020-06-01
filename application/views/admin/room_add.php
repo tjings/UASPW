@@ -14,13 +14,17 @@
         <?php echo form_open_multipart('MoviePage/room_add'); ?>
         <h1 style="text-align: center;">Add Room</h1>
 		<div class="form-group">
-            <label>Jumlah Kursi :</label>
-            <input type="number" name="index_kursi" id="index_kursi">
+            <label>Index Kursi :</label>
+            <input type="text" name="index_kursi" id="index_kursi">
         </div>
 
         <div class="form-group">
             <label>No Ruangan :</label>
-            <input type="number" name="id_ruangan" id="id_ruangan">
+            <select name="id_ruangan" id="id_ruangan">
+			<option value="1">Alpha</option>
+			<option value="2">Beta</option>
+			<option value="3">Gamma</option>
+		</select>
         </div>
 
         <br><br>

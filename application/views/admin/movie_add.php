@@ -37,12 +37,23 @@
         </div>
         <div class="form-group">
             <label>Durasi rilis :</label>
-            <input type="number" name="waktu_film" id="waktu_film">
+            <input type="time" name="waktu_film" id="waktu_film">
         </div>
         <div class="form-group">
             <label>Harga :</label>
             <input type="text" name="harga_movie" id="harga_movie">
         </div>
+        <div class="form-group">
+            <label>Trailer :</label>
+            <input type="text" name="trailer" id="trailer">
+        </div>
+		<div class="form-group">
+		<label for="is_released">Released: </label>
+		<select name="is_released" id="is_released">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</select>
+		</div>
         <div class="form-group">
             <label for="id_ruangan">Ruangan:</label>
 

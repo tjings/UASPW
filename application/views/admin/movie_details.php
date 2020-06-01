@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title> Detail Film </title>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() . "assets/css/details.css"; ?>">
 </head>
 <body>
 	<br/>
@@ -36,10 +39,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
+				<p style="font-size: 25px;color: rgb(127,127,127);"> Genre Movie : <?php  echo $genre_movie  ?> </p>
+				<p style="font-size: 25px;color: rgb(127,127,127);"> Sinopsis : <?php  echo $sinopsis  ?> </p>
+				<p style="font-size: 25px;color: rgb(127,127,127);"> Minimal Usia : <?php  echo $minimal_usia  ?> </p>
 				<p style="font-size: 25px;color: rgb(127,127,127);"> Released : <?php  echo $release_date  ?> </p>
 				<p style="font-size: 25px;color: rgb(127,127,127);"> Durasi Film : <?php  echo $waktu_film ?> </p>
+				<p style="font-size: 25px;color: rgb(127,127,127);"> Harga : <?php  echo $harga_movie  ?> </p>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6" id="img">
 				<img src="<?php echo base_url($poster_movie) ?>" alt="Link Poster not found !" width="auto" height="500">
 			</div>
 		</div>
